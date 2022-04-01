@@ -1,0 +1,48 @@
+PODS:
+  - Alamofire (5.5.0)
+  - MBProgressHUD (1.2.0)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
+  - PureLayout (3.1.9)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
+  - Shimmer (1.0.2)
+
+DEPENDENCIES:
+  - MBProgressHUD (~> 1.2.0)
+  - Moya (~> 15.0)
+  - PureLayout
+  - RxCocoa (= 6.5.0)
+  - RxSwift (= 6.5.0)
+  - Shimmer
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - MBProgressHUD
+    - Moya
+    - PureLayout
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - Shimmer
+
+SPEC CHECKSUMS:
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  PureLayout: 5fb5e5429519627d60d079ccb1eaa7265ce7cf88
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
+
+PODFILE CHECKSUM: 9802697ab4bb76a6f3840a9c6bc14c446bb9db98
+
+COCOAPODS: 1.11.2
