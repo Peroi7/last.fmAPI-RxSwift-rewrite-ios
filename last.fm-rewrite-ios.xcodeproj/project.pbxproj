@@ -7,9 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9720032D27F796F4008D35DD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9720032C27F796F4008D35DD /* BaseViewController.swift */; };
+		9720032F27F79716008D35DD /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9720032E27F79716008D35DD /* MainTabBarController.swift */; };
+		9720033127F7B2C4008D35DD /* RecordsOverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9720033027F7B2C4008D35DD /* RecordsOverviewController.swift */; };
+		9720033327F7B2E5008D35DD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9720033227F7B2E5008D35DD /* SearchViewController.swift */; };
+		9720033527F7B300008D35DD /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9720033427F7B300008D35DD /* FavoritesViewController.swift */; };
+		9720033727F7B3A2008D35DD /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9720033627F7B3A2008D35DD /* UIViewControllerExtensions.swift */; };
+		9720033D27F7B7B5008D35DD /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9720033C27F7B7B5008D35DD /* Colors.xcassets */; };
+		9720033F27F7B869008D35DD /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9720033E27F7B869008D35DD /* ColorTheme.swift */; };
+		9720034127F7BE2D008D35DD /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9720034027F7BE2D008D35DD /* ShadowView.swift */; };
+		9720034327F7C085008D35DD /* RecordCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9720034227F7C085008D35DD /* RecordCollectionViewCell.xib */; };
+		9720034527F7C76E008D35DD /* RecordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9720034427F7C76E008D35DD /* RecordCollectionViewCell.swift */; };
+		9720034727F7CB59008D35DD /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9720034627F7CB59008D35DD /* UIViewExtensions.swift */; };
+		9720034927F862CD008D35DD /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9720034827F862CD008D35DD /* CustomLabel.swift */; };
 		97452DAB27F6FE6200BBA456 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97452DAA27F6FE6200BBA456 /* AppDelegate.swift */; };
 		97452DAD27F6FE6200BBA456 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97452DAC27F6FE6200BBA456 /* SceneDelegate.swift */; };
-		97452DAF27F6FE6200BBA456 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97452DAE27F6FE6200BBA456 /* ViewController.swift */; };
 		97452DB227F6FE6200BBA456 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97452DB027F6FE6200BBA456 /* Main.storyboard */; };
 		97452DB427F6FE6700BBA456 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97452DB327F6FE6700BBA456 /* Assets.xcassets */; };
 		97452DB727F6FE6700BBA456 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97452DB527F6FE6700BBA456 /* LaunchScreen.storyboard */; };
@@ -20,10 +32,22 @@
 		29DEB91B2BB76E830BF67BC2 /* Pods-last.fm-rewrite-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-last.fm-rewrite-ios.release.xcconfig"; path = "Target Support Files/Pods-last.fm-rewrite-ios/Pods-last.fm-rewrite-ios.release.xcconfig"; sourceTree = "<group>"; };
 		79EB1F1D21971A2FA0E702BF /* Pods_last_fm_rewrite_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_last_fm_rewrite_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B6C95C8B628DFF542BF769 /* Pods-last.fm-rewrite-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-last.fm-rewrite-ios.debug.xcconfig"; path = "Target Support Files/Pods-last.fm-rewrite-ios/Pods-last.fm-rewrite-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		9720032C27F796F4008D35DD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		9720032E27F79716008D35DD /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		9720033027F7B2C4008D35DD /* RecordsOverviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsOverviewController.swift; sourceTree = "<group>"; };
+		9720033227F7B2E5008D35DD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		9720033427F7B300008D35DD /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		9720033627F7B3A2008D35DD /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		9720033C27F7B7B5008D35DD /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		9720033E27F7B869008D35DD /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
+		9720034027F7BE2D008D35DD /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		9720034227F7C085008D35DD /* RecordCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordCollectionViewCell.xib; sourceTree = "<group>"; };
+		9720034427F7C76E008D35DD /* RecordCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCollectionViewCell.swift; sourceTree = "<group>"; };
+		9720034627F7CB59008D35DD /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		9720034827F862CD008D35DD /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		97452DA727F6FE6200BBA456 /* last.fm-rewrite-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "last.fm-rewrite-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97452DAA27F6FE6200BBA456 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97452DAC27F6FE6200BBA456 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		97452DAE27F6FE6200BBA456 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		97452DB127F6FE6200BBA456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		97452DB327F6FE6700BBA456 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97452DB627F6FE6700BBA456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -65,11 +89,23 @@
 			children = (
 				97452DAA27F6FE6200BBA456 /* AppDelegate.swift */,
 				97452DAC27F6FE6200BBA456 /* SceneDelegate.swift */,
-				97452DAE27F6FE6200BBA456 /* ViewController.swift */,
+				9720032C27F796F4008D35DD /* BaseViewController.swift */,
+				9720032E27F79716008D35DD /* MainTabBarController.swift */,
+				9720033027F7B2C4008D35DD /* RecordsOverviewController.swift */,
+				9720033227F7B2E5008D35DD /* SearchViewController.swift */,
+				9720033427F7B300008D35DD /* FavoritesViewController.swift */,
+				9720033627F7B3A2008D35DD /* UIViewControllerExtensions.swift */,
+				9720033E27F7B869008D35DD /* ColorTheme.swift */,
+				9720034027F7BE2D008D35DD /* ShadowView.swift */,
 				97452DB027F6FE6200BBA456 /* Main.storyboard */,
 				97452DB327F6FE6700BBA456 /* Assets.xcassets */,
+				9720033C27F7B7B5008D35DD /* Colors.xcassets */,
 				97452DB527F6FE6700BBA456 /* LaunchScreen.storyboard */,
 				97452DB827F6FE6700BBA456 /* Info.plist */,
+				9720034227F7C085008D35DD /* RecordCollectionViewCell.xib */,
+				9720034427F7C76E008D35DD /* RecordCollectionViewCell.swift */,
+				9720034627F7CB59008D35DD /* UIViewExtensions.swift */,
+				9720034827F862CD008D35DD /* CustomLabel.swift */,
 			);
 			path = "last.fm-rewrite-ios";
 			sourceTree = "<group>";
@@ -88,7 +124,6 @@
 				93B6C95C8B628DFF542BF769 /* Pods-last.fm-rewrite-ios.debug.xcconfig */,
 				29DEB91B2BB76E830BF67BC2 /* Pods-last.fm-rewrite-ios.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -153,8 +188,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				97452DB727F6FE6700BBA456 /* LaunchScreen.storyboard in Resources */,
+				9720033D27F7B7B5008D35DD /* Colors.xcassets in Resources */,
 				97452DB427F6FE6700BBA456 /* Assets.xcassets in Resources */,
 				97452DB227F6FE6200BBA456 /* Main.storyboard in Resources */,
+				9720034327F7C085008D35DD /* RecordCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,8 +244,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97452DAF27F6FE6200BBA456 /* ViewController.swift in Sources */,
+				9720033127F7B2C4008D35DD /* RecordsOverviewController.swift in Sources */,
+				9720033F27F7B869008D35DD /* ColorTheme.swift in Sources */,
+				9720033327F7B2E5008D35DD /* SearchViewController.swift in Sources */,
+				9720033527F7B300008D35DD /* FavoritesViewController.swift in Sources */,
+				9720034127F7BE2D008D35DD /* ShadowView.swift in Sources */,
+				9720033727F7B3A2008D35DD /* UIViewControllerExtensions.swift in Sources */,
+				9720032D27F796F4008D35DD /* BaseViewController.swift in Sources */,
+				9720032F27F79716008D35DD /* MainTabBarController.swift in Sources */,
+				9720034527F7C76E008D35DD /* RecordCollectionViewCell.swift in Sources */,
+				9720034927F862CD008D35DD /* CustomLabel.swift in Sources */,
 				97452DAB27F6FE6200BBA456 /* AppDelegate.swift in Sources */,
+				9720034727F7CB59008D35DD /* UIViewExtensions.swift in Sources */,
 				97452DAD27F6FE6200BBA456 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

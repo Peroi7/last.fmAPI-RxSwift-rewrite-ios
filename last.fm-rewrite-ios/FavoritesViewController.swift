@@ -1,19 +1,20 @@
 //
-//  ViewController.swift
+//  FavoritesViewController.swift
 //  last.fm-rewrite-ios
 //
-//  Created by SMBA on 01.04.2022..
+//  Created by SMBA on 02.04.2022..
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class FavoritesViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "Favorites"
         // Do any additional setup after loading the view.
     }
-
-
+    
 }
 
