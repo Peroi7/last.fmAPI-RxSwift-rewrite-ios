@@ -42,7 +42,7 @@ extension MainTabBarController {
             let appearance = UITabBarAppearance()
             appearance.configureWithOpaqueBackground()
             appearance.backgroundColor = .white
-            appearance.shadowColor = ColorTheme.tintShadow
+            appearance.shadowColor = ColorTheme.shadowBackground
             tabBar.standardAppearance = appearance
             tabBar.scrollEdgeAppearance = tabBar.standardAppearance
         }

@@ -13,7 +13,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        setupNavigationBarAppearance(background: ColorTheme.tintPrimary)
+        setupNavigationBarAppearance(background: ColorTheme.primaryBackground)
         
     }
     

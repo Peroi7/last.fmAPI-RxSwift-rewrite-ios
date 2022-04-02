@@ -66,6 +66,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9720034A27F893DC008D35DD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9720032E27F79716008D35DD /* MainTabBarController.swift */,
+				9720032C27F796F4008D35DD /* BaseViewController.swift */,
+				9720033027F7B2C4008D35DD /* RecordsOverviewController.swift */,
+				9720033227F7B2E5008D35DD /* SearchViewController.swift */,
+				9720033427F7B300008D35DD /* FavoritesViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9720034B27F893FB008D35DD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9720033627F7B3A2008D35DD /* UIViewControllerExtensions.swift */,
+				9720034627F7CB59008D35DD /* UIViewExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9720034C27F89412008D35DD /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				9720034027F7BE2D008D35DD /* ShadowView.swift */,
+				9720034827F862CD008D35DD /* CustomLabel.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		9720034D27F8942F008D35DD /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				9720034227F7C085008D35DD /* RecordCollectionViewCell.xib */,
+				9720034427F7C76E008D35DD /* RecordCollectionViewCell.swift */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		9720034E27F8944E008D35DD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9720033E27F7B869008D35DD /* ColorTheme.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		97452D9E27F6FE6200BBA456 = {
 			isa = PBXGroup;
 			children = (
@@ -87,25 +134,18 @@
 		97452DA927F6FE6200BBA456 /* last.fm-rewrite-ios */ = {
 			isa = PBXGroup;
 			children = (
+				9720034E27F8944E008D35DD /* Supporting Files */,
+				9720034D27F8942F008D35DD /* CollectionViewCells */,
+				9720034C27F89412008D35DD /* CustomViews */,
+				9720034B27F893FB008D35DD /* Extensions */,
+				9720034A27F893DC008D35DD /* Controllers */,
 				97452DAA27F6FE6200BBA456 /* AppDelegate.swift */,
 				97452DAC27F6FE6200BBA456 /* SceneDelegate.swift */,
-				9720032C27F796F4008D35DD /* BaseViewController.swift */,
-				9720032E27F79716008D35DD /* MainTabBarController.swift */,
-				9720033027F7B2C4008D35DD /* RecordsOverviewController.swift */,
-				9720033227F7B2E5008D35DD /* SearchViewController.swift */,
-				9720033427F7B300008D35DD /* FavoritesViewController.swift */,
-				9720033627F7B3A2008D35DD /* UIViewControllerExtensions.swift */,
-				9720033E27F7B869008D35DD /* ColorTheme.swift */,
-				9720034027F7BE2D008D35DD /* ShadowView.swift */,
 				97452DB027F6FE6200BBA456 /* Main.storyboard */,
 				97452DB327F6FE6700BBA456 /* Assets.xcassets */,
 				9720033C27F7B7B5008D35DD /* Colors.xcassets */,
 				97452DB527F6FE6700BBA456 /* LaunchScreen.storyboard */,
 				97452DB827F6FE6700BBA456 /* Info.plist */,
-				9720034227F7C085008D35DD /* RecordCollectionViewCell.xib */,
-				9720034427F7C76E008D35DD /* RecordCollectionViewCell.swift */,
-				9720034627F7CB59008D35DD /* UIViewExtensions.swift */,
-				9720034827F862CD008D35DD /* CustomLabel.swift */,
 			);
 			path = "last.fm-rewrite-ios";
 			sourceTree = "<group>";

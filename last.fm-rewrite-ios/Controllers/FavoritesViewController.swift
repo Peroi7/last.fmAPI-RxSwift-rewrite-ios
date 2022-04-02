@@ -13,7 +13,6 @@ class FavoritesViewController: BaseViewController {
         super.viewDidLoad()
         
         navigationItem.title = "Favorites"
-        // Do any additional setup after loading the view.
     }
     
 }

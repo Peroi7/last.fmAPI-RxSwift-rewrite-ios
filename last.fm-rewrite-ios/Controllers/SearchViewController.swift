@@ -13,8 +13,6 @@ class SearchViewController: BaseViewController {
         super.viewDidLoad()
         
         navigationController?.navigationBar.prefersLargeTitles = false
-
-        // Do any additional setup after loading the view.
     }
     
     override func setupNavigationBarAppearance(background: UIColor) {
