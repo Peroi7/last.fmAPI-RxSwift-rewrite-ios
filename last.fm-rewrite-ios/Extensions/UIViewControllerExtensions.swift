@@ -9,6 +9,8 @@ import UIKit
 
 extension UIViewController {
     
+    //MARK: - NavigationController
+
     func embedInNavController() -> UINavigationController {
         return UINavigationController(rootViewController: self)
     }

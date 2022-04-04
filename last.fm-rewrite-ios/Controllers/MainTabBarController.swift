@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Moya
 
 class MainTabBarController: UITabBarController {
+    
+    var request: Cancellable?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +19,28 @@ class MainTabBarController: UITabBarController {
         customizeTabBarItems()
         setupTabBarAppearance()
         
+        guard let api = Network.api(type: .recordDetails) else  { return }
+        
+        request = api.fetch(completion: { result in
+            
+            switch result {
+            case .success(let value):
+            
+                do {
+                    let value = try value.records()
+                    let records = value
+                    print(records)
+                    
+                } catch let err {
+                    print(err)
+                }
+                
+            case .failure(_):
+                print("Request failed")
+            }
+            
+        })
+                
     }
     
     fileprivate func setupControllers() {
