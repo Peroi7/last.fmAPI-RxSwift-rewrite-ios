@@ -18,33 +18,11 @@ class MainTabBarController: UITabBarController {
         setupControllers()
         customizeTabBarItems()
         setupTabBarAppearance()
-        
-        guard let api = Network.api(type: .recordDetails) else  { return }
-        
-        request = api.fetch(completion: { result in
-            
-            switch result {
-            case .success(let value):
-            
-                do {
-                    let value = try value.records()
-                    let records = value
-                    print(records)
-                    
-                } catch let err {
-                    print(err)
-                }
-                
-            case .failure(_):
-                print("Request failed")
-            }
-            
-        })
                 
     }
     
     fileprivate func setupControllers() {
-        setViewControllers([RecordsOverviewController().embedInNavController(), SearchViewController().embedInNavController(), FavoritesViewController().embedInNavController()], animated: true)
+        setViewControllers([RecordsOverviewController().embedInNavController(), SearchViewController().embedInNavController(), RecordsOverviewController().embedInNavController()], animated: true)
     }
     
     fileprivate func customizeTabBarItems() {

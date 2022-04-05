@@ -9,13 +9,13 @@ import Foundation
 
 //MARK: - RecordsImage
 
+enum ImageSizeUrl: String {
+     case small
+     case medium
+     case large
+ }
+
 struct RecordImage: Codable {
-    
-    fileprivate enum ImageSizeUrl: String {
-        case small
-        case medium
-        case large
-    }
     
     let url: String
     let size: String

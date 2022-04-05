@@ -11,7 +11,8 @@ target 'last.fm-rewrite-ios' do
     pod 'RxSwift', '6.5.0'
     pod 'RxCocoa', '6.5.0'
     pod 'RxCocoa', '6.5.0'
-    pod 'MBProgressHUD', '~> 1.2.0'
-    pod 'UIView-Shimmer', '~> 1.0'
+    pod 'ProgressHUD'
+    pod 'SDWebImage'
+
     
 end

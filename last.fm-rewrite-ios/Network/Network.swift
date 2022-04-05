@@ -22,7 +22,7 @@ enum Network {
     fileprivate var defaultFetchLimit: Int {
         return 20
     }
-
+    
     static func api(type: Network) -> Network? {
         switch type {
         case .recordDetails:
@@ -38,7 +38,14 @@ extension Network: TargetType {
     var baseURL: URL {
         switch self {
         case .recordDetails:
-            return  URL.init(string: "http://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums")!
+            return URL.withQuery(baseURL: "http://ws.audioscrobbler.com/2.0/", queryName: "method", value: queryValue)
+        }
+    }
+    
+    var queryValue: String {
+        switch self {
+        case .recordDetails:
+            return "tag.gettopalbums"
         }
     }
     
@@ -47,6 +54,7 @@ extension Network: TargetType {
         case .recordDetails:
             return ""
         }
+    
     }
     
     var method: Moya.Method {
@@ -59,22 +67,27 @@ extension Network: TargetType {
     var task: Task {
         switch self {
         case.recordDetails:
-            return .requestParameters(parameters: ["tag" : RecordTags.disco.rawValue, "api_key" : apiKey, "format": FormatType.json.rawValue, "limit" : defaultFetchLimit], encoding: URLEncoding.default)
+            let parameters = ["tag": RecordTags.disco,
+                              "api_key" : apiKey,
+                              "format" : FormatType.json,
+                              "limit" : defaultFetchLimit
+            ]
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
         }
     }
     
     var headers: [String : String]? {
         return [String : String]()
     }
-
+    
 }
 
 extension Network {
     
     //MARK: - Fetching
-
-    fileprivate static let provider = MoyaProvider<Network>()
     
+    fileprivate static let provider = MoyaProvider<Network>(plugins: [NetworkLoggerPlugin()])
+        
     func fetch(completion:@escaping Moya.Completion) -> Cancellable {
         return Network.provider.request(self) { (result) in
             completion(result)
@@ -82,13 +95,17 @@ extension Network {
     }
 }
 
+//MARK: - Response Types
+
 extension Moya.Response {
     
-    func records() throws -> RecordsResponse {
+    func mapRecordsResponse() throws -> RecordsResponse {
         return try JSONDecoder().decode(RecordsResponse.self, from: data)
     }
     
 }
+
+//MARK: - Format/Record Type
 
 extension Network {
     
