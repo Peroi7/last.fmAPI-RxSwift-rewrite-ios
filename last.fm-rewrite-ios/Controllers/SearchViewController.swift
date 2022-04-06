@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchViewController: BaseViewController {
+class SearchViewController: BaseViewController<Record, RecordsDataLoader> {
     
     override func viewDidLoad() {
         super.viewDidLoad()

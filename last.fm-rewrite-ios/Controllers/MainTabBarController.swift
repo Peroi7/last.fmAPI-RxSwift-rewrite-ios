@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Moya
 
 class MainTabBarController: UITabBarController {
+    
+    var request: Cancellable?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,11 +18,11 @@ class MainTabBarController: UITabBarController {
         setupControllers()
         customizeTabBarItems()
         setupTabBarAppearance()
-        
+                
     }
     
     fileprivate func setupControllers() {
-        setViewControllers([RecordsOverviewController().embedInNavController(), SearchViewController().embedInNavController(), FavoritesViewController().embedInNavController()], animated: true)
+        setViewControllers([RecordsOverviewController().embedInNavController(), SearchViewController().embedInNavController(), RecordsOverviewController().embedInNavController()], animated: true)
     }
     
     fileprivate func customizeTabBarItems() {

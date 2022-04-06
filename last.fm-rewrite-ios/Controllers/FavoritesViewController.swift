@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FavoritesViewController: BaseViewController {
+class FavoritesViewController: BaseViewController<Record, RecordsDataLoader> {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -6,23 +6,24 @@
 //
 
 import UIKit
-import UIView_Shimmer
+import SDWebImage
 
-class RecordCollectionViewCell: UICollectionViewCell, ShimmeringViewProtocol {
+class RecordCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var wrapperView: UIView!
     @IBOutlet weak var recordImageView: UIImageView!
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var recordTitleLabel: CustomLabel!
     
-//    var shimmeringAnimatedItems: [UIView] {
-//        [recordImageView]
-//    }
+    //MARK: - Record
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    
+    var record: Record? {
+        didSet {
+            guard let uRecord = record else { return }
+            recordTitleLabel.text = uRecord.name
+            recordImageView.sd_imageTransition = .fade
+            self.recordImageView.sd_setImage(with: uRecord.imageURL)
+        }
     }
-    
 }
 

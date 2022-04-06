@@ -23,14 +23,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u6q-lb-nMk" userLabel="Wrapper View">
                                 <rect key="frame" x="0.0" y="0.0" width="286" height="173"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icAddToFavorite-icon" translatesAutoresizingMaskIntoConstraints="NO" id="aQN-H1-nj3">
-                                        <rect key="frame" x="0.0" y="0.0" width="286" height="100"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aQN-H1-nj3">
+                                        <rect key="frame" x="0.0" y="0.0" width="286" height="120"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="o1f-cI-z9V"/>
+                                            <constraint firstAttribute="height" constant="120" id="o1f-cI-z9V"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELG-Cu-P6L">
-                                        <rect key="frame" x="238" y="104" width="44" height="44"/>
+                                        <rect key="frame" x="238" y="124" width="44" height="44"/>
                                         <color key="backgroundColor" red="0.035294117647058823" green="0.32156862745098036" blue="0.93333333333333335" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="Jrx-Cr-YNa"/>
@@ -46,7 +46,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bil-1w-2sg" customClass="CustomLabel" customModule="last_fm_rewrite_ios" customModuleProvider="target">
-                                        <rect key="frame" x="4" y="104" width="218" height="69"/>
+                                        <rect key="frame" x="4" y="124" width="218" height="49"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -68,6 +68,7 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
@@ -90,6 +91,7 @@
                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                         <integer key="value" value="6"/>
                     </userDefinedRuntimeAttribute>
+                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                 </userDefinedRuntimeAttributes>
             </collectionViewCellContentView>
             <size key="customSize" width="294" height="181"/>

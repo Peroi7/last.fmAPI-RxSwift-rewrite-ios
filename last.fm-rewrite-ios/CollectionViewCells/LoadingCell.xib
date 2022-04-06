@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gkb-Ar-PbE" customClass="LoadingCell" customModule="last_fm_rewrite_ios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="213" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="huZ-ke-cTk">
+                <rect key="frame" x="0.0" y="0.0" width="213" height="150"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mEe-id-mzQ">
+                        <rect key="frame" x="0.0" y="0.0" width="213" height="150"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="mEe-id-mzQ" secondAttribute="bottom" id="AZy-XK-DLi"/>
+                    <constraint firstItem="mEe-id-mzQ" firstAttribute="top" secondItem="huZ-ke-cTk" secondAttribute="top" id="Boi-ik-u05"/>
+                    <constraint firstItem="mEe-id-mzQ" firstAttribute="leading" secondItem="huZ-ke-cTk" secondAttribute="leading" id="CEX-RS-GTq"/>
+                    <constraint firstAttribute="trailing" secondItem="mEe-id-mzQ" secondAttribute="trailing" id="xRE-CD-Ivq"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="213" height="150"/>
+            <point key="canvasLocation" x="-457.24637681159425" y="-154.6875"/>
+        </collectionViewCell>
+    </objects>
+</document>
