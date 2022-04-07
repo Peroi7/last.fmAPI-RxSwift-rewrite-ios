@@ -12,4 +12,5 @@ struct ColorTheme {
     //MARK: - Background
     static let primaryBackground = UIColor(named: "Background-Primary")!
     static let shadowBackground = UIColor(named: "Background-Shadow")!
+    static let recordDetailBackground = UIColor(named: "Background-RecordDetail")!
 }

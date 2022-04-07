@@ -7,6 +7,8 @@
 
 import UIKit
 
+//MARK: - Shadow
+
 class ShadowView: UIView {
 
     override init(frame: CGRect) {
@@ -22,7 +24,6 @@ class ShadowView: UIView {
     }
     
     func setupShadow() {
-        backgroundColor = .gray
         layer.cornerRadius = 8
         layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.09).cgColor
         layer.shadowOpacity = 1

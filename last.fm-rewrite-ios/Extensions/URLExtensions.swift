@@ -9,6 +9,8 @@ import Foundation
 
 extension URL {
     
+    //MARK: - QueryItem
+
     static func withQuery(baseURL: String, queryName: String, value: String?) -> URL {
         var urlComponents = URLComponents(string: baseURL)
         urlComponents?.queryItems = [URLQueryItem(name: queryName, value: value)]

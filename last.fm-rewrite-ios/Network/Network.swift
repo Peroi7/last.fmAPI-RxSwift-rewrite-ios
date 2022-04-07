@@ -13,20 +13,16 @@ enum Network {
     
     //MARK: - Network
     
-    case recordDetails
+    case recordDetails(tag: String)
     
     fileprivate var apiKey: Any {
         return Bundle.main.propertyValue(resource: "NetworkData", key: "api_key")
     }
     
-    fileprivate var defaultFetchLimit: Int {
-        return 20
-    }
-    
     static func api(type: Network) -> Network? {
         switch type {
-        case .recordDetails:
-            return recordDetails
+        case .recordDetails(let tag):
+            return recordDetails(tag: tag)
         }
     }
 }
@@ -66,11 +62,11 @@ extension Network: TargetType {
     
     var task: Task {
         switch self {
-        case.recordDetails:
-            let parameters = ["tag": RecordTags.disco,
+        case.recordDetails(let tag):
+            let parameters = ["tag": tag,
                               "api_key" : apiKey,
                               "format" : FormatType.json,
-                              "limit" : defaultFetchLimit
+                              "limit" : Constants.itemsPerPage
             ]
             return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
         }
@@ -105,7 +101,7 @@ extension Moya.Response {
     
 }
 
-//MARK: - Format/Record Type
+//MARK: - Format Type
 
 extension Network {
     
@@ -113,8 +109,5 @@ extension Network {
         case json
         case xml
     }
-    
-    fileprivate enum RecordTags: String, CaseIterable {
-        case disco
-    }
 }
+

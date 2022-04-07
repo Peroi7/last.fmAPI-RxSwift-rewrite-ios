@@ -24,3 +24,10 @@ struct Record: Codable {
     }
 }
 
+//MARK: - Equatable
+
+extension Record: Equatable {
+    static func == (lhs: Record, rhs: Record) -> Bool {
+        return lhs.name == rhs.name && lhs.artist == rhs.artist && lhs.image == rhs.image
+    }
+}

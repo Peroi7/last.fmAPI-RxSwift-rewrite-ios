@@ -38,6 +38,18 @@
 		975DF3E627FBAA7100350744 /* RecordDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF3E527FBAA7100350744 /* RecordDataLoader.swift */; };
 		975DF3E827FC5B2500350744 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 975DF3E727FC5B2500350744 /* LoadingCell.xib */; };
 		975DF3EA27FC5BEE00350744 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF3E927FC5BEE00350744 /* LoadingCell.swift */; };
+		975DF3EC27FC9A5100350744 /* RecordTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF3EB27FC9A5100350744 /* RecordTag.swift */; };
+		975DF3EF27FCA02C00350744 /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF3EE27FCA02C00350744 /* Constans.swift */; };
+		975DF3F127FCFE8D00350744 /* CollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF3F027FCFE8C00350744 /* CollectionExtensions.swift */; };
+		975DF3F327FD086300350744 /* RecordDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF3F227FD086300350744 /* RecordDetailsViewController.swift */; };
+		975DF3F527FD09E000350744 /* StrechyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF3F427FD09E000350744 /* StrechyImageView.swift */; };
+		975DF3F727FD0CAB00350744 /* RecordDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 975DF3F627FD0CAB00350744 /* RecordDetailsViewController.xib */; };
+		975DF3FB27FD96A000350744 /* RecordInfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975DF3FA27FD96A000350744 /* RecordInfoLabel.swift */; };
+		975DF3FD27FD96D900350744 /* RecordInfoLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 975DF3FC27FD96D900350744 /* RecordInfoLabel.xib */; };
+		97C1AE7D27FDB95000B5B637 /* RecordTracksView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97C1AE7C27FDB95000B5B637 /* RecordTracksView.xib */; };
+		97C1AE7F27FDD3A300B5B637 /* RecordTracksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C1AE7E27FDD3A300B5B637 /* RecordTracksView.swift */; };
+		97C1AE8127FE5C9600B5B637 /* RecordInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97C1AE8027FE5C9600B5B637 /* RecordInfoView.xib */; };
+		97C1AE8627FF044B00B5B637 /* RecordInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C1AE8527FF044B00B5B637 /* RecordInfoView.swift */; };
 		BC2F13EA550D9FA699EF514F /* Pods_last_fm_rewrite_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79EB1F1D21971A2FA0E702BF /* Pods_last_fm_rewrite_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +90,18 @@
 		975DF3E527FBAA7100350744 /* RecordDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDataLoader.swift; sourceTree = "<group>"; };
 		975DF3E727FC5B2500350744 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		975DF3E927FC5BEE00350744 /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
+		975DF3EB27FC9A5100350744 /* RecordTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTag.swift; sourceTree = "<group>"; };
+		975DF3EE27FCA02C00350744 /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
+		975DF3F027FCFE8C00350744 /* CollectionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtensions.swift; sourceTree = "<group>"; };
+		975DF3F227FD086300350744 /* RecordDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailsViewController.swift; sourceTree = "<group>"; };
+		975DF3F427FD09E000350744 /* StrechyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrechyImageView.swift; sourceTree = "<group>"; };
+		975DF3F627FD0CAB00350744 /* RecordDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordDetailsViewController.xib; sourceTree = "<group>"; };
+		975DF3FA27FD96A000350744 /* RecordInfoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordInfoLabel.swift; sourceTree = "<group>"; };
+		975DF3FC27FD96D900350744 /* RecordInfoLabel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordInfoLabel.xib; sourceTree = "<group>"; };
+		97C1AE7C27FDB95000B5B637 /* RecordTracksView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordTracksView.xib; sourceTree = "<group>"; };
+		97C1AE7E27FDD3A300B5B637 /* RecordTracksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTracksView.swift; sourceTree = "<group>"; };
+		97C1AE8027FE5C9600B5B637 /* RecordInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordInfoView.xib; sourceTree = "<group>"; };
+		97C1AE8527FF044B00B5B637 /* RecordInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +124,8 @@
 				9720033027F7B2C4008D35DD /* RecordsOverviewController.swift */,
 				9720033227F7B2E5008D35DD /* SearchViewController.swift */,
 				9720033427F7B300008D35DD /* FavoritesViewController.swift */,
+				975DF3F227FD086300350744 /* RecordDetailsViewController.swift */,
+				975DF3F627FD0CAB00350744 /* RecordDetailsViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -111,17 +137,21 @@
 				9720034627F7CB59008D35DD /* UIViewExtensions.swift */,
 				9716558F27FB15DD00F6180F /* BundleExtensions.swift */,
 				975DF3E027FB482D00350744 /* URLExtensions.swift */,
+				975DF3F027FCFE8C00350744 /* CollectionExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		9720034C27F89412008D35DD /* CustomViews */ = {
+		9720034C27F89412008D35DD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9720034027F7BE2D008D35DD /* ShadowView.swift */,
-				9720034827F862CD008D35DD /* CustomLabel.swift */,
+				97C1AE8727FF165600B5B637 /* CustomViews */,
+				97C1AE8227FE5CA100B5B637 /* Xibs */,
+				975DF3FA27FD96A000350744 /* RecordInfoLabel.swift */,
+				97C1AE7E27FDD3A300B5B637 /* RecordTracksView.swift */,
+				97C1AE8527FF044B00B5B637 /* RecordInfoView.swift */,
 			);
-			path = CustomViews;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		9720034D27F8942F008D35DD /* CollectionViewCells */ = {
@@ -139,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				9720033E27F7B869008D35DD /* ColorTheme.swift */,
+				975DF3EE27FCA02C00350744 /* Constans.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -160,6 +191,7 @@
 				9720035727F8BDDC008D35DD /* Record.swift */,
 				9720035927F8BE08008D35DD /* Artist.swift */,
 				9720035D27F8C48E008D35DD /* RecordImage.swift */,
+				975DF3EB27FC9A5100350744 /* RecordTag.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -190,7 +222,7 @@
 				9720034F27F8962C008D35DD /* Network */,
 				9720034E27F8944E008D35DD /* Supporting Files */,
 				9720034D27F8942F008D35DD /* CollectionViewCells */,
-				9720034C27F89412008D35DD /* CustomViews */,
+				9720034C27F89412008D35DD /* Views */,
 				9720034B27F893FB008D35DD /* Extensions */,
 				9720034A27F893DC008D35DD /* Controllers */,
 				97452DAA27F6FE6200BBA456 /* AppDelegate.swift */,
@@ -211,6 +243,26 @@
 				975DF3E527FBAA7100350744 /* RecordDataLoader.swift */,
 			);
 			path = DataLoaders;
+			sourceTree = "<group>";
+		};
+		97C1AE8227FE5CA100B5B637 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				975DF3FC27FD96D900350744 /* RecordInfoLabel.xib */,
+				97C1AE8027FE5C9600B5B637 /* RecordInfoView.xib */,
+				97C1AE7C27FDB95000B5B637 /* RecordTracksView.xib */,
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
+		97C1AE8727FF165600B5B637 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				975DF3F427FD09E000350744 /* StrechyImageView.swift */,
+				9720034827F862CD008D35DD /* CustomLabel.swift */,
+				9720034027F7BE2D008D35DD /* ShadowView.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		A2BAC317BA7F513425DB88F5 /* Frameworks */ = {
@@ -294,7 +346,11 @@
 				97452DB727F6FE6700BBA456 /* LaunchScreen.storyboard in Resources */,
 				9720033D27F7B7B5008D35DD /* Colors.xcassets in Resources */,
 				97452DB427F6FE6700BBA456 /* Assets.xcassets in Resources */,
+				97C1AE7D27FDB95000B5B637 /* RecordTracksView.xib in Resources */,
+				97C1AE8127FE5C9600B5B637 /* RecordInfoView.xib in Resources */,
+				975DF3F727FD0CAB00350744 /* RecordDetailsViewController.xib in Resources */,
 				9720036027FB0ADB008D35DD /* NetworkData.plist in Resources */,
+				975DF3FD27FD96D900350744 /* RecordInfoLabel.xib in Resources */,
 				97452DB227F6FE6200BBA456 /* Main.storyboard in Resources */,
 				9720034327F7C085008D35DD /* RecordCollectionViewCell.xib in Resources */,
 			);
@@ -351,24 +407,32 @@
 			files = (
 				9720033127F7B2C4008D35DD /* RecordsOverviewController.swift in Sources */,
 				9720033F27F7B869008D35DD /* ColorTheme.swift in Sources */,
+				97C1AE7F27FDD3A300B5B637 /* RecordTracksView.swift in Sources */,
 				9720033327F7B2E5008D35DD /* SearchViewController.swift in Sources */,
 				9720033527F7B300008D35DD /* FavoritesViewController.swift in Sources */,
+				975DF3F327FD086300350744 /* RecordDetailsViewController.swift in Sources */,
+				975DF3F127FCFE8D00350744 /* CollectionExtensions.swift in Sources */,
 				9720034127F7BE2D008D35DD /* ShadowView.swift in Sources */,
 				9720033727F7B3A2008D35DD /* UIViewControllerExtensions.swift in Sources */,
+				975DF3EF27FCA02C00350744 /* Constans.swift in Sources */,
 				9720035827F8BDDC008D35DD /* Record.swift in Sources */,
 				975DF3E627FBAA7100350744 /* RecordDataLoader.swift in Sources */,
 				975DF3E427FB66F600350744 /* BaseDataLoader.swift in Sources */,
+				975DF3FB27FD96A000350744 /* RecordInfoLabel.swift in Sources */,
 				975DF3E127FB482D00350744 /* URLExtensions.swift in Sources */,
 				9720035E27F8C48E008D35DD /* RecordImage.swift in Sources */,
+				975DF3F527FD09E000350744 /* StrechyImageView.swift in Sources */,
 				9720035627F89DA3008D35DD /* RecordsResponse.swift in Sources */,
 				9720032D27F796F4008D35DD /* BaseViewController.swift in Sources */,
 				9720032F27F79716008D35DD /* MainTabBarController.swift in Sources */,
 				9720034527F7C76E008D35DD /* RecordCollectionViewCell.swift in Sources */,
+				97C1AE8627FF044B00B5B637 /* RecordInfoView.swift in Sources */,
 				9720035C27F8C3B4008D35DD /* TopRecordsResponse.swift in Sources */,
 				9720034927F862CD008D35DD /* CustomLabel.swift in Sources */,
 				97452DAB27F6FE6200BBA456 /* AppDelegate.swift in Sources */,
 				975DF3EA27FC5BEE00350744 /* LoadingCell.swift in Sources */,
 				9720035127F89643008D35DD /* Network.swift in Sources */,
+				975DF3EC27FC9A5100350744 /* RecordTag.swift in Sources */,
 				9720035A27F8BE08008D35DD /* Artist.swift in Sources */,
 				9720034727F7CB59008D35DD /* UIViewExtensions.swift in Sources */,
 				97452DAD27F6FE6200BBA456 /* SceneDelegate.swift in Sources */,
