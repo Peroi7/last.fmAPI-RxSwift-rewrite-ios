@@ -1,0 +1,50 @@
+PODS:
+  - Alamofire (5.5.0)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
+  - ProgressHUD (13.6)
+  - PureLayout (3.1.9)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
+  - SDWebImage (5.12.5):
+    - SDWebImage/Core (= 5.12.5)
+  - SDWebImage/Core (5.12.5)
+
+DEPENDENCIES:
+  - Moya (~> 15.0)
+  - ProgressHUD
+  - PureLayout
+  - RxCocoa (= 6.5.0)
+  - RxSwift (= 6.5.0)
+  - SDWebImage
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Moya
+    - ProgressHUD
+    - PureLayout
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  ProgressHUD: 4bdaa0d2ddf676b23324b199f9facffb5c3a1620
+  PureLayout: 5fb5e5429519627d60d079ccb1eaa7265ce7cf88
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  SDWebImage: 0905f1b7760fc8ac4198cae0036600d67478751e
+
+PODFILE CHECKSUM: c47481902fede4b0b10bc15da0163231e98de789
+
+COCOAPODS: 1.11.2

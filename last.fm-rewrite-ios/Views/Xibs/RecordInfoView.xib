@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="R7l-kz-qFq" customClass="RecordInfoView" customModule="last_fm_rewrite_ios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTC-57-Lvr">
+                    <rect key="frame" x="24" y="24" width="27" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="nFO-9s-bdh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                    <color key="textColor" name="Background-Shadow"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eHe-MA-8gE" customClass="ShadowView" customModule="last_fm_rewrite_ios" customModuleProvider="target">
+                    <rect key="frame" x="16" y="52" width="288" height="500"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lrx-f4-LgT" userLabel="Wrapper View">
+                            <rect key="frame" x="0.0" y="0.0" width="288" height="500"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NT1-17-T3r">
+                                    <rect key="frame" x="8" y="8" width="272" height="484"/>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="NT1-17-T3r" secondAttribute="bottom" constant="8" id="1zA-b0-co4"/>
+                                <constraint firstAttribute="trailing" secondItem="NT1-17-T3r" secondAttribute="trailing" constant="8" id="9cq-dU-YNJ"/>
+                                <constraint firstItem="NT1-17-T3r" firstAttribute="top" secondItem="lrx-f4-LgT" secondAttribute="top" constant="8" id="TiE-zl-lgI"/>
+                                <constraint firstItem="NT1-17-T3r" firstAttribute="leading" secondItem="lrx-f4-LgT" secondAttribute="leading" constant="8" id="i6M-su-4pq"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="lrx-f4-LgT" firstAttribute="top" secondItem="eHe-MA-8gE" secondAttribute="top" id="0GL-IF-Aud"/>
+                        <constraint firstItem="lrx-f4-LgT" firstAttribute="leading" secondItem="eHe-MA-8gE" secondAttribute="leading" id="6wE-nI-9qe"/>
+                        <constraint firstAttribute="bottom" secondItem="lrx-f4-LgT" secondAttribute="bottom" id="OVm-gB-cFD"/>
+                        <constraint firstAttribute="trailing" secondItem="lrx-f4-LgT" secondAttribute="trailing" id="o9f-nm-fN0"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="tQo-v9-Zwg"/>
+            <color key="backgroundColor" name="Background-RecordDetail"/>
+            <constraints>
+                <constraint firstItem="tQo-v9-Zwg" firstAttribute="trailing" secondItem="eHe-MA-8gE" secondAttribute="trailing" constant="16" id="CeE-zN-awX"/>
+                <constraint firstItem="kTC-57-Lvr" firstAttribute="top" secondItem="tQo-v9-Zwg" secondAttribute="top" constant="24" id="KMf-qe-hoV"/>
+                <constraint firstItem="eHe-MA-8gE" firstAttribute="top" secondItem="kTC-57-Lvr" secondAttribute="bottom" constant="8" id="LLi-rC-c7u"/>
+                <constraint firstItem="tQo-v9-Zwg" firstAttribute="bottom" secondItem="eHe-MA-8gE" secondAttribute="bottom" constant="16" id="RUD-MD-iVx"/>
+                <constraint firstItem="eHe-MA-8gE" firstAttribute="leading" secondItem="tQo-v9-Zwg" secondAttribute="leading" constant="16" id="fPa-rk-9MF"/>
+                <constraint firstItem="kTC-57-Lvr" firstAttribute="leading" secondItem="tQo-v9-Zwg" secondAttribute="leading" constant="24" id="tOx-3F-x0P"/>
+            </constraints>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="8"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="stackView" destination="NT1-17-T3r" id="HTv-JT-A6n"/>
+                <outlet property="wrapperView" destination="lrx-f4-LgT" id="gyo-Y4-PRj"/>
+            </connections>
+            <point key="canvasLocation" x="111" y="-6"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Background-RecordDetail">
+            <color red="0.94509803921568625" green="0.94509803921568625" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Background-Shadow">
+            <color red="0.69411764705882351" green="0.71372549019607845" blue="0.78823529411764703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
