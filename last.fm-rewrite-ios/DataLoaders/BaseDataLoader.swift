@@ -17,19 +17,19 @@ class BaseDataLoader<Item>: NSObject, UICollectionViewDelegate, UICollectionView
     let disposeBag = DisposeBag()
     var request: Cancellable?
     var items: BehaviorRelay<[Item]> = BehaviorRelay.init(value: [Item]())
-    var isImageLoading: BehaviorRelay<Bool> = BehaviorRelay.init(value: true)
     var isLoading: BehaviorRelay<Bool> = BehaviorRelay.init(value: false)
     var errorOccured:((Bool) -> Void)?
+    weak var collectionView: UICollectionView?
+    var didSelect:((_ collectionView: UICollectionView, _ indexPath: IndexPath, _ item: Item) -> Void)?
 
+    
     var baseCellIdentifier: String {
-        return "baseCellIdentifier"
+        return "BaseCellIdentifier"
     }
     
     var loadingCellIdentifier: String {
-        return "loadingCellIdentifier"
+        return "LoadingCellIdentifier"
     }
-
-    weak var collectionView: UICollectionView?
     
     required override init() {
         super.init()
@@ -76,7 +76,7 @@ class BaseDataLoader<Item>: NSObject, UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.value.count
+        return items.value.isEmpty ? 1 : items.value.count
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -86,29 +86,40 @@ class BaseDataLoader<Item>: NSObject, UICollectionViewDelegate, UICollectionView
     //MARK: - UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        if let callback = didSelect {
+            callback(collectionView, indexPath, item(indexPath: indexPath))
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     }
     
+    //MARK: - UICollectionDelegateFlowLayout
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 1
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return 10
-//    }
-
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-        let size = (collectionView.frame.width - 2)  / 2
-        return CGSize(width: size, height: size)
+        let size = (collectionView.frame.width - 2) / 2
+        return .init(width: size, height: 185.0)
+        
     }
     
     //MARK: - Items Loading
     
-    func loadItems() {
+    func loadItems(isPagging: Bool) {
+    }
+    
+    func onPagination(indexPath: IndexPath) {
+       
+    }
+    
+    func loadDetails<T>(item: T) {
         
     }
     

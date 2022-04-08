@@ -5,13 +5,16 @@
 //  Created by SMBA on 05.04.2022..
 //
 
-import UIKit
 import ProgressHUD
 
 //MARK: - Loading Cell
 
 class LoadingCell: UICollectionViewCell {
         
+    deinit {
+        ProgressHUD.dismiss()
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

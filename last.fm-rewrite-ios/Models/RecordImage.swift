@@ -31,3 +31,11 @@ struct RecordImage: Codable {
         size = try container.decode(String.self, forKey: .size)
     }
 }
+
+//MARK: - Equatable
+
+extension RecordImage: Equatable {
+    static func == (lhs: RecordImage, rhs: RecordImage) -> Bool {
+        return lhs.url == rhs.url && lhs.size == rhs.size
+    }
+}

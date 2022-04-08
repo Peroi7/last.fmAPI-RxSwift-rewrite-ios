@@ -25,3 +25,11 @@ struct Artist: Codable {
         self.name = try container.decode(String.self, forKey: .name)
     }
 }
+
+//MARK: - Equatable
+
+extension Artist: Equatable {
+    static func == (lhs: Artist, rhs: Artist) -> Bool {
+        return lhs.name == rhs.name && lhs.ident == rhs.ident
+    }
+}

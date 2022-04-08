@@ -12,26 +12,25 @@ import ProgressHUD
 class BaseViewController<T: Codable, DataLoader: BaseDataLoader<T>>: UIViewController {
 
     fileprivate var visualEffectView: UIVisualEffectView!
-    let collectionView = UICollectionView.init(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    fileprivate let collectionView = UICollectionView.init(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     let dataLoader = DataLoader()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataLoader.loadItems()
         setupUI()
         setupNavigationBarAppearance(background: ColorTheme.primaryBackground)
         showToast()
     }
     
-    func setupUI() {
+    fileprivate func setupUI() {
         view.backgroundColor = .white
         dataLoader.setupCollectionView(collectionView: collectionView)
         view.addSubview(collectionView)
         collectionView.autoPinEdgesToSuperviewEdges()
     }
     
-    func showToast()  {
+    fileprivate func showToast()  {
         dataLoader.errorOccured = {[weak self] isErrorOccured in
             guard let uSelf = self else { return }
             if isErrorOccured {
@@ -66,7 +65,7 @@ extension BaseViewController {
         let alert = UIAlertController(title: "", message: "Something went wrong. Unable to load data.", preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "Try again", style: .default) { _ in
             self.blurEffect(show: false)
-            self.dataLoader.loadItems()
+            self.dataLoader.loadItems(isPagging: false)
         }
         alert.addAction(defaultAction)
         blurEffect(show: true)

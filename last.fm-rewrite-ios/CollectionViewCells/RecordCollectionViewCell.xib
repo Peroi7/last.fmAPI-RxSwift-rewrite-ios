@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -46,7 +46,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bil-1w-2sg" customClass="CustomLabel" customModule="last_fm_rewrite_ios" customModuleProvider="target">
-                                        <rect key="frame" x="4" y="124" width="218" height="49"/>
+                                        <rect key="frame" x="4" y="124" width="218" height="44"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -55,7 +55,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="aQN-H1-nj3" secondAttribute="trailing" id="0DD-nS-rYD"/>
-                                    <constraint firstAttribute="bottom" secondItem="Bil-1w-2sg" secondAttribute="bottom" id="Eap-EV-Bpb"/>
+                                    <constraint firstItem="Bil-1w-2sg" firstAttribute="bottom" secondItem="ELG-Cu-P6L" secondAttribute="bottom" id="Eap-EV-Bpb"/>
                                     <constraint firstAttribute="trailing" secondItem="ELG-Cu-P6L" secondAttribute="trailing" constant="4" id="Kxt-ie-H60"/>
                                     <constraint firstItem="Bil-1w-2sg" firstAttribute="leading" secondItem="u6q-lb-nMk" secondAttribute="leading" constant="4" id="VVU-ek-Y7J"/>
                                     <constraint firstItem="ELG-Cu-P6L" firstAttribute="leading" secondItem="Bil-1w-2sg" secondAttribute="trailing" constant="16" id="WEA-Si-NfA"/>
@@ -101,7 +101,7 @@
                 <outlet property="recordTitleLabel" destination="Bil-1w-2sg" id="bDd-z4-fa7"/>
                 <outlet property="wrapperView" destination="u6q-lb-nMk" id="X78-aP-5aO"/>
             </connections>
-            <point key="canvasLocation" x="-628.98550724637687" y="-307.03125"/>
+            <point key="canvasLocation" x="-41" y="-209"/>
         </collectionViewCell>
     </objects>
     <resources>

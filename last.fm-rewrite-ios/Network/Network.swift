@@ -13,20 +13,19 @@ enum Network {
     
     //MARK: - Network
     
-    case recordDetails
+    case recordDetails(tag: String)
+    case recordDetailsExtended(artist: String, album: String)
     
     fileprivate var apiKey: Any {
         return Bundle.main.propertyValue(resource: "NetworkData", key: "api_key")
     }
     
-    fileprivate var defaultFetchLimit: Int {
-        return 20
-    }
-    
     static func api(type: Network) -> Network? {
         switch type {
-        case .recordDetails:
-            return recordDetails
+        case .recordDetails(let tag):
+            return recordDetails(tag: tag)
+        case .recordDetailsExtended(let artist, let album):
+            return recordDetailsExtended(artist: artist, album: album)
         }
     }
 }
@@ -37,7 +36,7 @@ extension Network: TargetType {
     
     var baseURL: URL {
         switch self {
-        case .recordDetails:
+        case .recordDetails, .recordDetailsExtended:
             return URL.withQuery(baseURL: "http://ws.audioscrobbler.com/2.0/", queryName: "method", value: queryValue)
         }
     }
@@ -46,12 +45,14 @@ extension Network: TargetType {
         switch self {
         case .recordDetails:
             return "tag.gettopalbums"
+        case .recordDetailsExtended:
+            return "album.getinfo"
         }
     }
     
     var path: String {
         switch self {
-        case .recordDetails:
+        case .recordDetails, .recordDetailsExtended:
             return ""
         }
     
@@ -59,18 +60,25 @@ extension Network: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .recordDetails:
+        case .recordDetails, .recordDetailsExtended:
             return .get
         }
     }
     
     var task: Task {
         switch self {
-        case.recordDetails:
-            let parameters = ["tag": RecordTags.disco,
+        case.recordDetails(let tag):
+            let parameters = ["tag": tag,
                               "api_key" : apiKey,
                               "format" : FormatType.json,
-                              "limit" : defaultFetchLimit
+                              "limit" : Constants.itemsPerPage
+            ]
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
+        case .recordDetailsExtended(let artist, let album):
+            let parameters = ["artist": artist,
+                              "album" : album,
+                              "api_key" : apiKey,
+                              "format" : FormatType.json
             ]
             return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
         }
@@ -103,9 +111,13 @@ extension Moya.Response {
         return try JSONDecoder().decode(RecordsResponse.self, from: data)
     }
     
+    func mapRecordDetailsExtended() throws -> RecordDetailsResponse {
+        return try JSONDecoder().decode(RecordDetailsResponse.self, from: data)
+    }
+    
 }
 
-//MARK: - Format/Record Type
+//MARK: - Format Type
 
 extension Network {
     
@@ -113,8 +125,5 @@ extension Network {
         case json
         case xml
     }
-    
-    fileprivate enum RecordTags: String, CaseIterable {
-        case disco
-    }
 }
+

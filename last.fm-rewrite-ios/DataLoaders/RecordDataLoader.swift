@@ -9,19 +9,31 @@ import UIKit
 import ProgressHUD
 
 class RecordsDataLoader: BaseDataLoader<Record> {
-    
-    override func loadItems() {
-        guard let api = Network.api(type: .recordDetails) else { return }
+   
+    override func loadItems(isPagging: Bool) {
         
+        guard let tag = RecordTag.generateNextTag() else { return }
+        RecordTag.usedTags.append(tag)
+        // fancy way not receiving duplicates & ending data
+        
+        guard let api = Network.api(type: .recordDetails(tag: tag.rawValue)) else { return }
+                
         isLoading.accept(true)
         
         request = api.fetch(completion: {[weak self] result in
             guard let uSelf = self else { return }
+            
             switch result {
             case .success(let value):
                 do {
                     let records = try value.mapRecordsResponse()
-                    uSelf.items.accept(records.records.topRecords)
+                    if isPagging {
+                        let oldData = uSelf.items.value
+                        uSelf.items.accept(oldData + records.records.topRecords)
+                    } else {
+                        uSelf.items.accept(records.records.topRecords)
+                    }
+                    
                     uSelf.isLoading.accept(false)
                     uSelf.errorOccured?(false)
                     
@@ -32,23 +44,9 @@ class RecordsDataLoader: BaseDataLoader<Record> {
                 
             case .failure(_):
                 uSelf.errorOccured?(true)
-                print("error")
             }
         })
         
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if isLoading.value {
-            return CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-        } else {
-            return super.collectionView(collectionView, layout: collectionViewLayout, sizeForItemAt: indexPath)
-        }
-        
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return isLoading.value ? 1 : items.value.count
     }
     
     override var baseCellIdentifier: String { return "RecordCellIdentifier"}
@@ -61,6 +59,8 @@ class RecordsDataLoader: BaseDataLoader<Record> {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        onPagination(indexPath: indexPath)
+        
         if isLoading.value {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: loadingCellIdentifier, for: indexPath) as! LoadingCell
             return cell
@@ -68,17 +68,24 @@ class RecordsDataLoader: BaseDataLoader<Record> {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: baseCellIdentifier, for: indexPath) as! RecordCollectionViewCell
             configCell(cell: cell, indexPath: indexPath)
             return cell
-            
         }
         
     }
     
-    override func configCell(cell: UICollectionViewCell, indexPath: IndexPath) {
-        super.configCell(cell: cell, indexPath: indexPath)
+    override func onPagination(indexPath: IndexPath) {
+        guard !items.value.isEmpty else { return }
         
-        if let uRecordCell = cell as? RecordCollectionViewCell {
-            let uItem = item(indexPath: indexPath)
-            uRecordCell.record = uItem
+        let scrollIndex = Int(Constants.itemsPerPage - (Constants.itemsPerPage * 2/4))
+        let lastScrollItem = items.value[items.value.count - scrollIndex]
+        
+        if item(indexPath: indexPath) == lastScrollItem && indexPath.item == items.value.count - scrollIndex {
+            self.loadItems(isPagging: true)
+        }
+    }
+    
+    override func configCell(cell: UICollectionViewCell, indexPath: IndexPath) {
+        if let recordCell = cell as? RecordCollectionViewCell {
+            recordCell.record = item(indexPath: indexPath)
         }
     }
     
