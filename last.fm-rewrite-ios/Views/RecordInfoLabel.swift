@@ -6,11 +6,45 @@
 //
 
 import UIKit
+import PureLayout
 
 class RecordInfoLabel: UIView {
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
+    let recordInfoLeftLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14.0, weight: .bold)
+        return label
+    }()
+    
+    let recordInfoSecondLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14.0, weight: .regular)
+        return label
+    }()
+    
+    enum RecordInfoLabelTitle: String {
+        case listeners = "Listeners"
+        case playcount = "Playcount"
+        case published = "Published"
     }
+    
+    required init(title: RecordInfoLabelTitle) {
+        super.init(frame: .zero)
+        
+        addSubview(recordInfoLeftLabel)
+        recordInfoLeftLabel.autoPinEdge(.left, to: .left, of: self, withOffset: 8.0)
+        recordInfoLeftLabel.autoSetDimension(.height, toSize: 24.0)
+        recordInfoLeftLabel.autoAlignAxis(.horizontal, toSameAxisOf: self)
+        recordInfoLeftLabel.text = title.rawValue
+
+        addSubview(recordInfoSecondLabel)
+        recordInfoSecondLabel.autoPinEdge(.right, to: .right, of: self, withOffset: -8.0)
+        recordInfoSecondLabel.autoSetDimension(.height, toSize: 24.0)
+        recordInfoSecondLabel.autoAlignAxis(.horizontal, toSameAxisOf: recordInfoLeftLabel)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }

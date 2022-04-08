@@ -9,7 +9,7 @@ import UIKit
 import ProgressHUD
 
 class RecordsDataLoader: BaseDataLoader<Record> {
-    
+   
     override func loadItems(isPagging: Bool) {
         
         guard let tag = RecordTag.generateNextTag() else { return }
@@ -49,15 +49,6 @@ class RecordsDataLoader: BaseDataLoader<Record> {
         
     }
     
-    override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if isLoading.value {
-            return CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-        } else {
-            return super.collectionView(collectionView, layout: collectionViewLayout, sizeForItemAt: indexPath)
-        }
-        
-    }
-    
     override var baseCellIdentifier: String { return "RecordCellIdentifier"}
     
     override func setupCollectionView(collectionView: UICollectionView) {
@@ -85,7 +76,6 @@ class RecordsDataLoader: BaseDataLoader<Record> {
         guard !items.value.isEmpty else { return }
         
         let scrollIndex = Int(Constants.itemsPerPage - (Constants.itemsPerPage * 2/4))
-        
         let lastScrollItem = items.value[items.value.count - scrollIndex]
         
         if item(indexPath: indexPath) == lastScrollItem && indexPath.item == items.value.count - scrollIndex {

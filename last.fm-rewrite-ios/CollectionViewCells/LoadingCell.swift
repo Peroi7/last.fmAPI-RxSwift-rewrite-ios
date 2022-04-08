@@ -11,6 +11,10 @@ import ProgressHUD
 
 class LoadingCell: UICollectionViewCell {
         
+    deinit {
+        ProgressHUD.dismiss()
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

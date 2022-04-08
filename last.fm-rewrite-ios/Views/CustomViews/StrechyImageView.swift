@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PureLayout
 
 //MARK: - StretchyImageView
 
@@ -16,6 +17,8 @@ class StretchyImageView: UIView {
     var containerView: UIView!
     var imageView: UIImageView!
     var scrollView: UIScrollView!
+    var blurEffect: UIBlurEffect!
+    var visualEffectView: UIVisualEffectView!
     
     var containerViewHeight = NSLayoutConstraint()
     
@@ -31,13 +34,17 @@ class StretchyImageView: UIView {
     }
     
     func createViews() {
-        
         containerView = UIView()
         self.addSubview(containerView)
         imageView = UIImageView()
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         containerView.addSubview(imageView)
+        
+        blurEffect = UIBlurEffect(style: .light)
+        visualEffectView =  UIVisualEffectView(effect: blurEffect)
+        imageView.addSubview(visualEffectView)
+        visualEffectView.autoPinEdgesToSuperviewEdges()
     }
     
     func setViewConstraints() {
@@ -51,7 +58,6 @@ class StretchyImageView: UIView {
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        
         containerViewHeight.constant = scrollView.contentInset.top
         let offsetY = -(scrollView.contentOffset.y + scrollView.contentInset.top)
         containerView.clipsToBounds = offsetY <= 0

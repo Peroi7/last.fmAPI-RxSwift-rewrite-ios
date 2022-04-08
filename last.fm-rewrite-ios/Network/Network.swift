@@ -14,6 +14,7 @@ enum Network {
     //MARK: - Network
     
     case recordDetails(tag: String)
+    case recordDetailsExtended(artist: String, album: String)
     
     fileprivate var apiKey: Any {
         return Bundle.main.propertyValue(resource: "NetworkData", key: "api_key")
@@ -23,6 +24,8 @@ enum Network {
         switch type {
         case .recordDetails(let tag):
             return recordDetails(tag: tag)
+        case .recordDetailsExtended(let artist, let album):
+            return recordDetailsExtended(artist: artist, album: album)
         }
     }
 }
@@ -33,7 +36,7 @@ extension Network: TargetType {
     
     var baseURL: URL {
         switch self {
-        case .recordDetails:
+        case .recordDetails, .recordDetailsExtended:
             return URL.withQuery(baseURL: "http://ws.audioscrobbler.com/2.0/", queryName: "method", value: queryValue)
         }
     }
@@ -42,12 +45,14 @@ extension Network: TargetType {
         switch self {
         case .recordDetails:
             return "tag.gettopalbums"
+        case .recordDetailsExtended:
+            return "album.getinfo"
         }
     }
     
     var path: String {
         switch self {
-        case .recordDetails:
+        case .recordDetails, .recordDetailsExtended:
             return ""
         }
     
@@ -55,7 +60,7 @@ extension Network: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .recordDetails:
+        case .recordDetails, .recordDetailsExtended:
             return .get
         }
     }
@@ -67,6 +72,13 @@ extension Network: TargetType {
                               "api_key" : apiKey,
                               "format" : FormatType.json,
                               "limit" : Constants.itemsPerPage
+            ]
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
+        case .recordDetailsExtended(let artist, let album):
+            let parameters = ["artist": artist,
+                              "album" : album,
+                              "api_key" : apiKey,
+                              "format" : FormatType.json
             ]
             return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
         }
@@ -97,6 +109,10 @@ extension Moya.Response {
     
     func mapRecordsResponse() throws -> RecordsResponse {
         return try JSONDecoder().decode(RecordsResponse.self, from: data)
+    }
+    
+    func mapRecordDetailsExtended() throws -> RecordDetailsResponse {
+        return try JSONDecoder().decode(RecordDetailsResponse.self, from: data)
     }
     
 }

@@ -103,11 +103,11 @@ class BaseDataLoader<Item>: NSObject, UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-        let size = (collectionView.frame.width - 2)  / 2
-        return CGSize(width: size, height: size)
+        let size = (collectionView.frame.width - 2) / 2
+        return .init(width: size, height: 185.0)
+        
     }
     
     //MARK: - Items Loading
@@ -117,6 +117,10 @@ class BaseDataLoader<Item>: NSObject, UICollectionViewDelegate, UICollectionView
     
     func onPagination(indexPath: IndexPath) {
        
+    }
+    
+    func loadDetails<T>(item: T) {
+        
     }
     
 }

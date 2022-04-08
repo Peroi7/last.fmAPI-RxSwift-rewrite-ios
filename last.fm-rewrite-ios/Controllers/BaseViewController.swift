@@ -23,14 +23,14 @@ class BaseViewController<T: Codable, DataLoader: BaseDataLoader<T>>: UIViewContr
         showToast()
     }
     
-    func setupUI() {
+    fileprivate func setupUI() {
         view.backgroundColor = .white
         dataLoader.setupCollectionView(collectionView: collectionView)
         view.addSubview(collectionView)
         collectionView.autoPinEdgesToSuperviewEdges()
     }
     
-    func showToast()  {
+    fileprivate func showToast()  {
         dataLoader.errorOccured = {[weak self] isErrorOccured in
             guard let uSelf = self else { return }
             if isErrorOccured {

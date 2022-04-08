@@ -15,4 +15,5 @@ struct Constants {
     static let paddingDefaultSmall: CGFloat = 16.0
     
     static let stackViewItemSize: CGFloat = 20.0
+    static let scrollViewBottomInset: CGFloat = 80.0
 }

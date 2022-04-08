@@ -28,7 +28,7 @@
                     <rect key="frame" x="16" y="44" width="343" height="607"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dynamite" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnJ-MU-dnr">
-                            <rect key="frame" x="16" y="16" width="70" height="571"/>
+                            <rect key="frame" x="16" y="16" width="275" height="571"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -49,6 +49,7 @@
                         <constraint firstAttribute="bottom" secondItem="gnJ-MU-dnr" secondAttribute="bottom" constant="20" id="CSe-2u-hlb"/>
                         <constraint firstItem="gnJ-MU-dnr" firstAttribute="leading" secondItem="gLs-D6-vSc" secondAttribute="leading" constant="16" id="DJY-i9-63x"/>
                         <constraint firstAttribute="trailing" secondItem="yQI-BF-ICv" secondAttribute="trailing" constant="16" id="V01-1m-54z"/>
+                        <constraint firstItem="yQI-BF-ICv" firstAttribute="leading" secondItem="gnJ-MU-dnr" secondAttribute="trailing" constant="16" id="XJn-zX-haC"/>
                         <constraint firstAttribute="bottom" secondItem="Xpb-dJ-D2E" secondAttribute="bottom" constant="10" id="a9J-j8-g7f"/>
                         <constraint firstItem="yQI-BF-ICv" firstAttribute="centerY" secondItem="gnJ-MU-dnr" secondAttribute="centerY" id="dnI-Mz-fAb"/>
                         <constraint firstItem="Xpb-dJ-D2E" firstAttribute="top" secondItem="gnJ-MU-dnr" secondAttribute="bottom" constant="10" id="q3X-xZ-GXD"/>
@@ -84,6 +85,7 @@
             </constraints>
             <connections>
                 <outlet property="expandIcon" destination="yQI-BF-ICv" id="xTY-ud-Idv"/>
+                <outlet property="recordTrackLabel" destination="gnJ-MU-dnr" id="jAL-q3-Adr"/>
                 <outlet property="shrinkedConstraint" destination="CSe-2u-hlb" id="LYl-My-Jkp"/>
                 <outlet property="stackView" destination="Xpb-dJ-D2E" id="Zld-Wg-sND"/>
             </connections>

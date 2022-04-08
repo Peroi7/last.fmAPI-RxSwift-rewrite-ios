@@ -6,11 +6,8 @@
 //
 
 import UIKit
-import Moya
 
 class MainTabBarController: UITabBarController {
-    
-    var request: Cancellable?
     
     override func viewDidLoad() {
         super.viewDidLoad()
