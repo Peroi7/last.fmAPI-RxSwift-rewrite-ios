@@ -31,6 +31,7 @@ class BaseRecordDetailsViewController<T: Codable, DataLoader: RecordDetailsDataL
     var playcountLabel: RecordInfoLabel!
     var publishedLabel: RecordInfoLabel!
     var topTracksView: RecordTracksView!
+    var favoriteButton: UIButton!
     var loadingView: LoadingView!
     
     var infoStackViewHeight: NSLayoutConstraint!
@@ -90,7 +91,16 @@ class BaseRecordDetailsViewController<T: Codable, DataLoader: RecordDetailsDataL
         containerView.addSubview(recordArtistLabel)
         recordArtistLabel.autoPinEdge(.top, to: .bottom, of: recordImageView, withOffset: Constants.paddingDefault)
         recordArtistLabel.autoAlignAxis(.vertical, toSameAxisOf: containerView)
-        recordArtistLabel.autoSetDimension(.height, toSize: 40.0)
+        recordArtistLabel.autoSetDimension(.height, toSize: 48.0)
+        
+        favoriteButton = UIButton(type: .custom)
+        favoriteButton.setImage(UIImage(named: "icAddToFavorite-icon"), for: .normal)
+        favoriteButton.layer.cornerRadius = 6.0
+        favoriteButton.backgroundColor = ColorTheme.favoriteButtonBackground
+        containerView.addSubview(favoriteButton)
+        favoriteButton.autoPinEdge(.right, to: .right, of: containerView, withOffset: -Constants.paddingDefaultSmall)
+        favoriteButton.autoAlignAxis(.horizontal, toSameAxisOf: recordArtistLabel)
+        favoriteButton.autoSetDimensions(to: .init(width: 48.0, height: 48.0))
         
         listenersLabel = RecordInfoLabel.init(title: .listeners)
         playcountLabel = RecordInfoLabel.init(title: .playcount)

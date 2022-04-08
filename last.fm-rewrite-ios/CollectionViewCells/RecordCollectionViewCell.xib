@@ -29,25 +29,9 @@
                                             <constraint firstAttribute="height" constant="120" id="o1f-cI-z9V"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELG-Cu-P6L">
-                                        <rect key="frame" x="238" y="124" width="44" height="44"/>
-                                        <color key="backgroundColor" red="0.035294117647058823" green="0.32156862745098036" blue="0.93333333333333335" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="Jrx-Cr-YNa"/>
-                                            <constraint firstAttribute="width" constant="44" id="oIF-Ly-A8T"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="icAddToFavorite-icon"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="6"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bil-1w-2sg" customClass="CustomLabel" customModule="last_fm_rewrite_ios" customModuleProvider="target">
-                                        <rect key="frame" x="4" y="124" width="218" height="44"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <rect key="frame" x="4" y="124" width="278" height="45"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -55,14 +39,12 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="aQN-H1-nj3" secondAttribute="trailing" id="0DD-nS-rYD"/>
-                                    <constraint firstItem="Bil-1w-2sg" firstAttribute="bottom" secondItem="ELG-Cu-P6L" secondAttribute="bottom" id="Eap-EV-Bpb"/>
-                                    <constraint firstAttribute="trailing" secondItem="ELG-Cu-P6L" secondAttribute="trailing" constant="4" id="Kxt-ie-H60"/>
-                                    <constraint firstItem="Bil-1w-2sg" firstAttribute="leading" secondItem="u6q-lb-nMk" secondAttribute="leading" constant="4" id="VVU-ek-Y7J"/>
-                                    <constraint firstItem="ELG-Cu-P6L" firstAttribute="leading" secondItem="Bil-1w-2sg" secondAttribute="trailing" constant="16" id="WEA-Si-NfA"/>
+                                    <constraint firstAttribute="bottom" secondItem="Bil-1w-2sg" secondAttribute="bottom" constant="4" id="9ay-VA-UFI"/>
+                                    <constraint firstItem="Bil-1w-2sg" firstAttribute="leading" secondItem="u6q-lb-nMk" secondAttribute="leading" constant="4" id="IrB-bO-7mH"/>
+                                    <constraint firstItem="Bil-1w-2sg" firstAttribute="top" secondItem="aQN-H1-nj3" secondAttribute="bottom" constant="4" id="UTs-S1-dr6"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bil-1w-2sg" secondAttribute="trailing" constant="4" id="Wez-pu-9rK"/>
                                     <constraint firstItem="aQN-H1-nj3" firstAttribute="leading" secondItem="u6q-lb-nMk" secondAttribute="leading" id="Zeb-qb-CUW"/>
-                                    <constraint firstItem="ELG-Cu-P6L" firstAttribute="top" secondItem="aQN-H1-nj3" secondAttribute="bottom" constant="4" id="bzF-Ai-OVo"/>
                                     <constraint firstItem="aQN-H1-nj3" firstAttribute="top" secondItem="u6q-lb-nMk" secondAttribute="top" id="gC7-wK-9qd"/>
-                                    <constraint firstItem="Bil-1w-2sg" firstAttribute="top" secondItem="aQN-H1-nj3" secondAttribute="bottom" constant="4" id="rjM-II-Hhd"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -96,16 +78,14 @@
             </collectionViewCellContentView>
             <size key="customSize" width="294" height="181"/>
             <connections>
-                <outlet property="favoriteButton" destination="ELG-Cu-P6L" id="bPc-B0-rbe"/>
                 <outlet property="recordImageView" destination="aQN-H1-nj3" id="xeA-Vy-jOv"/>
                 <outlet property="recordTitleLabel" destination="Bil-1w-2sg" id="bDd-z4-fa7"/>
                 <outlet property="wrapperView" destination="u6q-lb-nMk" id="X78-aP-5aO"/>
             </connections>
-            <point key="canvasLocation" x="-41" y="-209"/>
+            <point key="canvasLocation" x="-42.028985507246382" y="-209.26339285714286"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="icAddToFavorite-icon" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
