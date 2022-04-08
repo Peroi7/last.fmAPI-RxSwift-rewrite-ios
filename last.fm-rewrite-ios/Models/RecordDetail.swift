@@ -7,6 +7,30 @@
 
 import Foundation
 
+//MARK: - Record Details
+
+struct RecordDetail: Codable {
+    
+    let playcount: String
+    let listeners: String
+    let topTracks: TopTracks?
+    let wiki: Wiki?
+    
+    private enum CodingKeys: String, CodingKey {
+        case topTracks = "tracks"
+        case wiki
+        case listeners
+        case playcount
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.topTracks = try container.decodeIfPresent(TopTracks.self, forKey: .topTracks)
+        self.wiki = try container.decodeIfPresent(Wiki.self, forKey: .wiki)
+        self.playcount = try container.decode(String.self, forKey: .playcount)
+        self.listeners = try container.decode(String.self, forKey: .listeners)
+    }
+}
 
 struct Wiki: Codable {
     let published: String
@@ -14,51 +38,19 @@ struct Wiki: Codable {
 
 struct Track: Codable {
     let name: String
-    
-    private enum CodingKeys: String, CodingKey {
-        case name
-    }
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.name = try container.decode(String.self, forKey: .name)
-    }
 }
 
 struct TopTracks: Codable {
-    let track: [Track]
+    
+    let tracks: [Track]
     
     private enum CodingKeys: String, CodingKey {
-        case track
+        case tracks = "track"
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.track = try container.decode([Track].self, forKey: .track)
+        self.tracks = try container.decodeIfPresent([Track].self, forKey: .tracks) ?? []
     }
 }
-
-struct RecordDetail: Codable {
-    
-    let playCount: String
-    let listeners: String
-    let tracks: TopTracks?
-    let wiki: Wiki?
-    
-    private enum CodingKeys: String, CodingKey {
-        case playCount = "playcount"
-        case tracks
-        case wiki
-        case listeners
-    }
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.tracks = try container.decodeIfPresent(TopTracks.self, forKey: .tracks)
-        self.wiki = try container.decodeIfPresent(Wiki.self, forKey: .wiki)
-        self.playCount = try container.decode(String.self, forKey: .playCount)
-        self.listeners = try container.decode(String.self, forKey: .listeners)
-    }
-}
-
 

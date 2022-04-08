@@ -8,7 +8,6 @@
 import UIKit
 import SDWebImage
 import RxSwift
-import Moya
 import ProgressHUD
 
 class BaseRecordDetailsViewController<T: Codable, DataLoader: RecordDetailsDataLoader>: UIViewController, UIScrollViewDelegate  {
@@ -17,7 +16,7 @@ class BaseRecordDetailsViewController<T: Codable, DataLoader: RecordDetailsDataL
     //MARK: - Deinit
     
     deinit {
-        print("BaseRecordDetailsViewController - deinit")
+        
     }
     
     //MARK: - Views

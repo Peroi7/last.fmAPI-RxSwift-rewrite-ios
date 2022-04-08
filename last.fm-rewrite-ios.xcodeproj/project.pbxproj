@@ -129,13 +129,11 @@
 		9720034A27F893DC008D35DD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				97524A6F28007FFF00D52178 /* Details */,
 				9720032E27F79716008D35DD /* MainTabBarController.swift */,
-				9720032C27F796F4008D35DD /* BaseViewController.swift */,
 				9720033027F7B2C4008D35DD /* RecordsOverviewController.swift */,
 				9720033227F7B2E5008D35DD /* SearchViewController.swift */,
 				9720033427F7B300008D35DD /* FavoritesViewController.swift */,
-				975DF3F227FD086300350744 /* BaseRecordDetailsViewController.swift */,
-				97C1AE8E27FF8E9300B5B637 /* RecordDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -232,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				975DF3E227FB66B700350744 /* DataLoaders */,
+				97524A6E28007FDA00D52178 /* BaseControllers */,
 				9720035427F89D97008D35DD /* Models */,
 				9720034F27F8962C008D35DD /* Network */,
 				9720034E27F8944E008D35DD /* Supporting Files */,
@@ -248,6 +247,23 @@
 				97452DB827F6FE6700BBA456 /* Info.plist */,
 			);
 			path = "last.fm-rewrite-ios";
+			sourceTree = "<group>";
+		};
+		97524A6E28007FDA00D52178 /* BaseControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9720032C27F796F4008D35DD /* BaseViewController.swift */,
+				975DF3F227FD086300350744 /* BaseRecordDetailsViewController.swift */,
+			);
+			path = BaseControllers;
+			sourceTree = "<group>";
+		};
+		97524A6F28007FFF00D52178 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				97C1AE8E27FF8E9300B5B637 /* RecordDetailsViewController.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 		975DF3E227FB66B700350744 /* DataLoaders */ = {

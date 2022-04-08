@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import RxSwift
-import ProgressHUD
 
 class RecordDetailsViewController: BaseRecordDetailsViewController<RecordDetail, RecordDetailsDataLoader> {
     
@@ -36,27 +34,32 @@ class RecordDetailsViewController: BaseRecordDetailsViewController<RecordDetail,
         recordInfoView.stackView.addArrangedSubview(playcountLabel)
         
         listenersLabel.recordInfoSecondLabel.text = item.listeners.intValue.roundedWithAbbreviations
-        playcountLabel.recordInfoSecondLabel.text = item.playCount.intValue.roundedWithAbbreviations
-        infoStackViewHeight.constant = 100
+        playcountLabel.recordInfoSecondLabel.text = item.playcount.intValue.roundedWithAbbreviations
+        
+        infoStackViewHeight.constant = setInfoViewStackHeight(stack: recordInfoView.stackView)
         
         if let published = item.wiki?.published {
             recordInfoView.stackView.addArrangedSubview(publishedLabel)
             publishedLabel.recordInfoSecondLabel.text = published
-            infoStackViewHeight.constant = 150
+            infoStackViewHeight.constant = setInfoViewStackHeight(stack: recordInfoView.stackView)
         }
         
-        if let tracks = item.tracks?.track {
+        if let tracks = item.topTracks?.tracks {
             topTracksView.recordTrackLabel.text = tracks.first?.name
             topTracksView.alpha = 1
         }
         
     }
     
+    fileprivate func setInfoViewStackHeight(stack: UIStackView) -> CGFloat {
+        return CGFloat(stack.arrangedSubviews.count) * Constants.detailInfoViewItemSize
+    }
+    
     //MARK: - Expand Top Tracks
     
     func setExpanded(isExpanded: Bool, animated: Bool) {
-        guard let stackView = self.topTracksView.stackView else { return }
-        guard let uItems = dataLoader.items.value.first?.tracks?.track else { return }
+        guard let stackView = topTracksView.stackView else { return }
+        guard let uItems = dataLoader.items.value.first?.topTracks?.tracks else { return }
         
         if isExpanded {
             for uItem in uItems[1..<uItems.count] {

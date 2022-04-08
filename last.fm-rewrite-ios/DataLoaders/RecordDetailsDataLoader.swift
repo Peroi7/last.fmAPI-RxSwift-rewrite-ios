@@ -29,7 +29,7 @@ class RecordDetailsDataLoader: BaseDataLoader<RecordDetail> {
                     uSelf.isLoading.accept(false)
                     
                 } catch let error {
-                    print("Failed to record details: \(error.localizedDescription)")
+                    print("Failed to fetch details: \(error.localizedDescription)")
                     uSelf.errorOccured?(true)
                 }
                 

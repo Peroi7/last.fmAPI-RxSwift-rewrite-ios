@@ -10,7 +10,7 @@ import Foundation
 
 extension Int {
     
-    //MARK: - Rounded value
+    //MARK: - Formatted value
     
     var stringValue: String {
         return String(self)

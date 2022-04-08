@@ -10,6 +10,10 @@ import PureLayout
 
 class RecordInfoLabel: UIView {
     
+    deinit {
+        print("RecordInfoLabel - deinit")
+    }
+    
     let recordInfoLeftLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14.0, weight: .bold)
@@ -22,12 +26,16 @@ class RecordInfoLabel: UIView {
         return label
     }()
     
+    //MARK: - RecordLabel Title
+    
     enum RecordInfoLabelTitle: String {
         case listeners = "Listeners"
         case playcount = "Playcount"
         case published = "Published"
     }
     
+    //MARK: - Setup
+
     required init(title: RecordInfoLabelTitle) {
         super.init(frame: .zero)
         
