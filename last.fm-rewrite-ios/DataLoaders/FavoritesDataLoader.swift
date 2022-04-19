@@ -27,7 +27,7 @@ class FavoritesDataLoader: BaseDataLoader<FavoriteItem> {
     override func setupCollectionView(collectionView: UICollectionView) {
         super.setupCollectionView(collectionView: collectionView)
         collectionView.register(FavoriteRecordCollectionViewCell.nib, forCellWithReuseIdentifier: favoriteCellIdentifier)
-        collectionView.register(FavoritesEmptyStateHeaderView.self   , forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: emptyStateHeaderIdentifier)
+        collectionView.register(FavoritesEmptyStateHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: emptyStateHeaderIdentifier)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

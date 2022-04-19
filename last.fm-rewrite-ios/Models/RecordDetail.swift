@@ -9,7 +9,7 @@ import Foundation
 
 //MARK: - Record Details
 
-struct RecordDetail: Codable, Hashable {
+struct RecordDetail: Codable, Equatable {
     
     let playcount: String
     let listeners: String
@@ -31,31 +31,17 @@ struct RecordDetail: Codable, Hashable {
         self.listeners = try container.decode(String.self, forKey: .listeners)
     }
     
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(playcount)
-        hasher.combine(listeners)
-        hasher.combine(topTracks)
-        hasher.combine(wiki)
-    }
 }
 
-struct Wiki: Codable, Hashable {
+struct Wiki: Codable, Equatable {
     let published: String
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(published)
-    }
 }
 
-struct Track: Codable, Hashable {
+struct Track: Codable, Equatable {
     let name: String
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(name)
-    }
 }
 
-struct TopTracks: Codable, Hashable {
+struct TopTracks: Codable, Equatable {
     
     let tracks: [Track]
     
@@ -66,10 +52,6 @@ struct TopTracks: Codable, Hashable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.tracks = try container.decodeIfPresent([Track].self, forKey: .tracks) ?? []
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(tracks)
     }
 }
 

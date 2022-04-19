@@ -10,6 +10,8 @@ import ProgressHUD
 
 class RecordsDataLoader: BaseDataLoader<Record> {
     
+    fileprivate let recordCellIdentifier = "RecordCellIdentifier"
+    
     override func loadItems(isPagging: Bool) {
         
         guard let tag = RecordTag.generateNextTag() else { return }
@@ -53,7 +55,7 @@ class RecordsDataLoader: BaseDataLoader<Record> {
     
     override func setupCollectionView(collectionView: UICollectionView) {
         super.setupCollectionView(collectionView: collectionView)
-        collectionView.register(RecordCollectionViewCell.nib, forCellWithReuseIdentifier: baseCellIdentifier)
+        collectionView.register(RecordCollectionViewCell.nib, forCellWithReuseIdentifier: recordCellIdentifier)
         collectionView.register(LoadingCell.nib, forCellWithReuseIdentifier: loadingCellIdentifier)
     }
     
@@ -65,7 +67,7 @@ class RecordsDataLoader: BaseDataLoader<Record> {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: loadingCellIdentifier, for: indexPath) as! LoadingCell
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: baseCellIdentifier, for: indexPath) as! RecordCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: recordCellIdentifier, for: indexPath) as! RecordCollectionViewCell
             configCell(cell: cell, indexPath: indexPath)
             return cell
         }

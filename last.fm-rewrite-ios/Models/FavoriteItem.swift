@@ -7,7 +7,7 @@
 
 import Foundation
 
-class FavoriteItem: Codable {
+struct FavoriteItem: Codable {
     
     let record: Record
     let details: RecordDetail?
@@ -18,14 +18,9 @@ class FavoriteItem: Codable {
     }
 }
 
-extension FavoriteItem: Hashable {
+extension FavoriteItem: Equatable {
     
     static func == (lhs: FavoriteItem, rhs: FavoriteItem) -> Bool {
         return lhs.record == rhs.record && lhs.details == rhs.details
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(record)
-        hasher.combine(details)
     }
 }

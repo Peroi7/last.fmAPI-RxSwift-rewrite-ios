@@ -28,14 +28,10 @@ struct Artist: Codable {
 
 //MARK: - Hashable
 
-extension Artist: Hashable {
+extension Artist: Equatable {
+    
     static func == (lhs: Artist, rhs: Artist) -> Bool {
         return lhs.name == rhs.name && lhs.ident == rhs.ident
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(name)
-        hasher.combine(ident)
     }
 }
 

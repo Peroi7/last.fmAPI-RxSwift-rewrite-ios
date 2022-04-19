@@ -12,7 +12,7 @@ import Moya
 import ProgressHUD
 
 
-class BaseDataLoader<Item: Hashable>: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class BaseDataLoader<Item>: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         
     let disposeBag = DisposeBag()
     var request: Cancellable?

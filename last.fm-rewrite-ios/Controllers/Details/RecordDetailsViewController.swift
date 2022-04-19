@@ -24,7 +24,6 @@ class RecordDetailsViewController: BaseRecordDetailsViewController<RecordDetail,
         let favoriteItem = FavoriteItem.init(record: record, details: recordDetails)
         if isFavorite {
             FavoritesDataLoader.favorites.removeAll(where: {$0.record.ident == favoriteItem.record.ident})
-            
         } else {
             if let image = recordImageView.image {
                 convertImageToData(image: image, key: favoriteItem.record.ident)
@@ -37,11 +36,10 @@ class RecordDetailsViewController: BaseRecordDetailsViewController<RecordDetail,
         }
         
         setFavoriteButtonImage(animated: isFavorite)
-
     }
     
     fileprivate func convertImageToData(image: UIImage, key: String) {
-        guard let imageData = image.jpegData(compressionQuality: 100) else { return }
+        guard let imageData = image.jpegData(compressionQuality: 100.0) else { return }
         UserDefaults.standard.set(imageData, forKey: key)
     }
     

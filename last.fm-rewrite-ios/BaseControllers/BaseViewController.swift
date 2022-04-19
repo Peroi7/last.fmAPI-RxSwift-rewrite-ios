@@ -15,7 +15,6 @@ class BaseViewController<T: Codable, DataLoader: BaseDataLoader<T>>: UIViewContr
     fileprivate var visualEffectView: UIVisualEffectView!
     let collectionView = UICollectionView.init(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     let dataLoader = DataLoader()
-    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +58,7 @@ class BaseViewController<T: Codable, DataLoader: BaseDataLoader<T>>: UIViewContr
     
     func generateAlertAttributed(title: String) -> NSMutableAttributedString {
         return NSMutableAttributedString(string: String.init(format:"Are you sure you want to delete \"%@\" from this list?", title))
-        // extend with enum
+        // extend with enum but we have this time only one case
     }
     
     //MARK: - NavigationBar Appearance
