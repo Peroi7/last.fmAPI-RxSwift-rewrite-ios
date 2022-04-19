@@ -10,10 +10,6 @@ import PureLayout
 
 class RecordInfoLabel: UIView {
     
-    deinit {
-        print("RecordInfoLabel - deinit")
-    }
-    
     let recordInfoLeftLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14.0, weight: .bold)

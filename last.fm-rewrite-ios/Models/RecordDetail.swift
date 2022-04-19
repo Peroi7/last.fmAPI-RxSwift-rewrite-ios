@@ -9,7 +9,7 @@ import Foundation
 
 //MARK: - Record Details
 
-struct RecordDetail: Codable {
+struct RecordDetail: Codable, Equatable {
     
     let playcount: String
     let listeners: String
@@ -30,17 +30,18 @@ struct RecordDetail: Codable {
         self.playcount = try container.decode(String.self, forKey: .playcount)
         self.listeners = try container.decode(String.self, forKey: .listeners)
     }
+    
 }
 
-struct Wiki: Codable {
+struct Wiki: Codable, Equatable {
     let published: String
 }
 
-struct Track: Codable {
+struct Track: Codable, Equatable {
     let name: String
 }
 
-struct TopTracks: Codable {
+struct TopTracks: Codable, Equatable {
     
     let tracks: [Track]
     

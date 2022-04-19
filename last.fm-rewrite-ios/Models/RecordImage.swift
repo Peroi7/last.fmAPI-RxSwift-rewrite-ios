@@ -35,6 +35,7 @@ struct RecordImage: Codable {
 //MARK: - Equatable
 
 extension RecordImage: Equatable {
+    
     static func == (lhs: RecordImage, rhs: RecordImage) -> Bool {
         return lhs.url == rhs.url && lhs.size == rhs.size
     }
