@@ -10,15 +10,19 @@ import ProgressHUD
 
 class LoadingView: UIView {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    let shouldPresentHud: Bool
+    
+    init(shouldPresentHud: Bool) {
+        self.shouldPresentHud = shouldPresentHud
+        super.init(frame: .zero)
         
         alpha = 0
         backgroundColor = ColorTheme.recordDetailBackground
         
-        ProgressHUD.show()
+        shouldPresentHud ? ProgressHUD.show() : ProgressHUD.dismiss()
         ProgressHUD.animationType = .circleStrokeSpin
         ProgressHUD.colorAnimation = ColorTheme.primaryBackground
+            
     }
     
     required init?(coder: NSCoder) {

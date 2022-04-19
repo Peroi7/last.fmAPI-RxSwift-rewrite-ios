@@ -26,10 +26,13 @@ struct Artist: Codable {
     }
 }
 
-//MARK: - Equatable
+//MARK: - Hashable
 
 extension Artist: Equatable {
+    
     static func == (lhs: Artist, rhs: Artist) -> Bool {
         return lhs.name == rhs.name && lhs.ident == rhs.ident
     }
 }
+
+

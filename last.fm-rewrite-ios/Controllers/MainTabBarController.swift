@@ -19,7 +19,7 @@ class MainTabBarController: UITabBarController {
     }
     
     fileprivate func setupControllers() {
-        setViewControllers([RecordsOverviewController().embedInNavController(), SearchViewController().embedInNavController(), RecordsOverviewController().embedInNavController()], animated: true)
+        setViewControllers([RecordsOverviewController().embedInNavController(), SearchViewController().embedInNavController(), FavoritesViewController().embedInNavController()], animated: true)
     }
     
     fileprivate func customizeTabBarItems() {

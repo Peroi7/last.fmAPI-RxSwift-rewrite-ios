@@ -8,11 +8,12 @@
 import UIKit
 import PureLayout
 import ProgressHUD
+import RxSwift
 
 class BaseViewController<T: Codable, DataLoader: BaseDataLoader<T>>: UIViewController {
 
     fileprivate var visualEffectView: UIVisualEffectView!
-    fileprivate let collectionView = UICollectionView.init(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    let collectionView = UICollectionView.init(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     let dataLoader = DataLoader()
     
     override func viewDidLoad() {
@@ -29,7 +30,7 @@ class BaseViewController<T: Codable, DataLoader: BaseDataLoader<T>>: UIViewContr
         view.addSubview(collectionView)
         collectionView.autoPinEdgesToSuperviewEdges()
     }
-    
+        
     fileprivate func showToast()  {
         dataLoader.errorOccured = {[weak self] isErrorOccured in
             guard let uSelf = self else { return }
@@ -39,6 +40,25 @@ class BaseViewController<T: Codable, DataLoader: BaseDataLoader<T>>: UIViewContr
                 ProgressHUD.dismiss()
             }
         }
+    }
+    
+    func showAlertAttributed(attributedText: NSMutableAttributedString, completion: ((Bool) -> Void)?) {
+        let alert = UIAlertController.init(title: "",
+                                           message: "",
+                                           preferredStyle: .alert)
+        alert.setValue(attributedText, forKey: "attributedTitle")
+        alert.addAction(.init(title: "Cancel", style: .cancel, handler: { (_) in
+            completion?(false)
+        }))
+        alert.addAction(.init(title: "Remove", style: .default, handler: { (_) in
+            completion?(true)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func generateAlertAttributed(title: String) -> NSMutableAttributedString {
+        return NSMutableAttributedString(string: String.init(format:"Are you sure you want to delete \"%@\" from this list?", title))
+        // extend with enum but we have this time only one case
     }
     
     //MARK: - NavigationBar Appearance
