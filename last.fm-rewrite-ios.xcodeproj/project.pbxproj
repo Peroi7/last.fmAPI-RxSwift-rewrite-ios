@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		798E3685DA86196B53EB8BAD /* Pods_last_fm_rewrite_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452A7D98C2ADA61ACD891DC6 /* Pods_last_fm_rewrite_ios.framework */; };
+		43E2F32FF54B61825632A55E /* Pods_last_fm_rewrite_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07016D8C72FA006695A08B65 /* Pods_last_fm_rewrite_ios.framework */; };
 		9716559027FB15DE00F6180F /* BundleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9716558F27FB15DD00F6180F /* BundleExtensions.swift */; };
 		971715A9280E0A1F00D46566 /* FavoriteRecordCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971715A8280E0A1F00D46566 /* FavoriteRecordCollectionViewCell.xib */; };
 		971715AB280E0B8A00D46566 /* FavoriteRecordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971715AA280E0B8A00D46566 /* FavoriteRecordCollectionViewCell.swift */; };
@@ -67,8 +67,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0BA8F5F14C8AD41D57912F73 /* Pods-last.fm-rewrite-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-last.fm-rewrite-ios.debug.xcconfig"; path = "Target Support Files/Pods-last.fm-rewrite-ios/Pods-last.fm-rewrite-ios.debug.xcconfig"; sourceTree = "<group>"; };
-		452A7D98C2ADA61ACD891DC6 /* Pods_last_fm_rewrite_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_last_fm_rewrite_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		07016D8C72FA006695A08B65 /* Pods_last_fm_rewrite_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_last_fm_rewrite_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9716558F27FB15DD00F6180F /* BundleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtensions.swift; sourceTree = "<group>"; };
 		971715A8280E0A1F00D46566 /* FavoriteRecordCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteRecordCollectionViewCell.xib; sourceTree = "<group>"; };
 		971715AA280E0B8A00D46566 /* FavoriteRecordCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecordCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -127,7 +126,8 @@
 		97C1AE8E27FF8E9300B5B637 /* RecordDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailsViewController.swift; sourceTree = "<group>"; };
 		97C1AE9027FFC46D00B5B637 /* PrimitiveTypeExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimitiveTypeExtensions.swift; sourceTree = "<group>"; };
 		97C1AE9227FFC56800B5B637 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		C45B3B45C9690D96481617E3 /* Pods-last.fm-rewrite-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-last.fm-rewrite-ios.release.xcconfig"; path = "Target Support Files/Pods-last.fm-rewrite-ios/Pods-last.fm-rewrite-ios.release.xcconfig"; sourceTree = "<group>"; };
+		B99EF20EA60627DF044C2A5A /* Pods-last.fm-rewrite-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-last.fm-rewrite-ios.debug.xcconfig"; path = "Target Support Files/Pods-last.fm-rewrite-ios/Pods-last.fm-rewrite-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		BCE722142C8D99B6F4E4E70E /* Pods-last.fm-rewrite-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-last.fm-rewrite-ios.release.xcconfig"; path = "Target Support Files/Pods-last.fm-rewrite-ios/Pods-last.fm-rewrite-ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,21 +135,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				798E3685DA86196B53EB8BAD /* Pods_last_fm_rewrite_ios.framework in Frameworks */,
+				43E2F32FF54B61825632A55E /* Pods_last_fm_rewrite_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		77AF4799278A07260553E0E2 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				452A7D98C2ADA61ACD891DC6 /* Pods_last_fm_rewrite_ios.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		9720034A27F893DC008D35DD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,7 +236,7 @@
 				97452DA927F6FE6200BBA456 /* last.fm-rewrite-ios */,
 				97452DA827F6FE6200BBA456 /* Products */,
 				BFA910C16A3179831CF2D554 /* Pods */,
-				77AF4799278A07260553E0E2 /* Frameworks */,
+				988D1D121BA65F44B832A9C2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -328,11 +320,19 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
+		988D1D121BA65F44B832A9C2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07016D8C72FA006695A08B65 /* Pods_last_fm_rewrite_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BFA910C16A3179831CF2D554 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0BA8F5F14C8AD41D57912F73 /* Pods-last.fm-rewrite-ios.debug.xcconfig */,
-				C45B3B45C9690D96481617E3 /* Pods-last.fm-rewrite-ios.release.xcconfig */,
+				B99EF20EA60627DF044C2A5A /* Pods-last.fm-rewrite-ios.debug.xcconfig */,
+				BCE722142C8D99B6F4E4E70E /* Pods-last.fm-rewrite-ios.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -344,11 +344,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97452DBB27F6FE6700BBA456 /* Build configuration list for PBXNativeTarget "last.fm-rewrite-ios" */;
 			buildPhases = (
-				470DD81B4162C6F5D92D3D54 /* [CP] Check Pods Manifest.lock */,
+				7E661E34402F84EA64517DAE /* [CP] Check Pods Manifest.lock */,
 				97452DA327F6FE6200BBA456 /* Sources */,
 				97452DA427F6FE6200BBA456 /* Frameworks */,
 				97452DA527F6FE6200BBA456 /* Resources */,
-				673AC42DD39CF00F17E424BE /* [CP] Embed Pods Frameworks */,
+				55B54C9AE73D5DE99F78A27A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -413,7 +413,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		470DD81B4162C6F5D92D3D54 /* [CP] Check Pods Manifest.lock */ = {
+		55B54C9AE73D5DE99F78A27A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-last.fm-rewrite-ios/Pods-last.fm-rewrite-ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-last.fm-rewrite-ios/Pods-last.fm-rewrite-ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-last.fm-rewrite-ios/Pods-last.fm-rewrite-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E661E34402F84EA64517DAE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -433,23 +450,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		673AC42DD39CF00F17E424BE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-last.fm-rewrite-ios/Pods-last.fm-rewrite-ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-last.fm-rewrite-ios/Pods-last.fm-rewrite-ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-last.fm-rewrite-ios/Pods-last.fm-rewrite-ios-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -648,7 +648,7 @@
 		};
 		97452DBC27F6FE6700BBA456 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0BA8F5F14C8AD41D57912F73 /* Pods-last.fm-rewrite-ios.debug.xcconfig */;
+			baseConfigurationReference = B99EF20EA60627DF044C2A5A /* Pods-last.fm-rewrite-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -677,7 +677,7 @@
 		};
 		97452DBD27F6FE6700BBA456 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C45B3B45C9690D96481617E3 /* Pods-last.fm-rewrite-ios.release.xcconfig */;
+			baseConfigurationReference = BCE722142C8D99B6F4E4E70E /* Pods-last.fm-rewrite-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

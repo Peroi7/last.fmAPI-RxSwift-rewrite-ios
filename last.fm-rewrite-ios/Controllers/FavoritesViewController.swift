@@ -28,13 +28,6 @@ class FavoritesViewController: BaseViewController<FavoriteItem, FavoritesDataLoa
     @objc func favoriteItemAdded() {
         collectionView.reloadData()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        navigationItem.title = "Favorites"
-    }
-    
 }
 
 extension FavoritesViewController {
@@ -57,4 +50,14 @@ extension FavoritesViewController {
             
         }).disposed(by: disposeBag)
     }
+}
+
+extension FavoritesViewController {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationItem.title = "Favorites"
+    }
+    
 }
