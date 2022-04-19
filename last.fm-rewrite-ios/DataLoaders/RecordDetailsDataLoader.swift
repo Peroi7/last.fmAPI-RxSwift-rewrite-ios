@@ -9,35 +9,67 @@ import Foundation
 import RxCocoa
 import RxSwift
 
+
 class RecordDetailsDataLoader: BaseDataLoader<RecordDetail> {
+        
+    enum DetailsLoaderType {
+        case api
+        case fromDisk
+        case cached
+    }
     
-    override func loadDetails<T>(item: T) {
-        guard let item = item as? Record else { return }
-        
-        guard let api = Network.api(type: .recordDetailsExtended(artist: item.artist.name, album: item.name)) else  { return }
-        
-        isLoading.accept(true)
-        
-        request = api.fetch(completion: {[weak self] result in
-            guard let uSelf = self else { return }
-            switch result {
-            case .success(let value):
-                do {
-                    let recordDetails = try value.mapRecordDetailsExtended()
-                    let items = [recordDetails.record]
-                    uSelf.items.accept(items)
-                    uSelf.isLoading.accept(false)
+    func loadDetails<T>(item: T, type: DetailsLoaderType) {
+        switch type {
+        case .api:
+            guard let item = item as? Record else { return }
+            
+            guard let api = Network.api(type: .recordDetailsExtended(artist: item.artist.name, album: item.name)) else  { return }
+            
+            isLoading.accept(true)
+            
+            request = api.fetch(completion: {[weak self] result in
+                guard let uSelf = self else { return }
+                switch result {
+                case .success(let value):
+                    do {
+                        let recordDetails = try value.mapRecordDetailsExtended()
+                        let items = [recordDetails.record]
+                        uSelf.items.accept(items)
+                        uSelf.isLoading.accept(false)
+                        
+                    } catch let error {
+                        print("Failed to fetch details: \(error.localizedDescription)")
+                        uSelf.errorOccured?(true)
+                    }
                     
-                } catch let error {
-                    print("Failed to fetch details: \(error.localizedDescription)")
+                case .failure(_):
                     uSelf.errorOccured?(true)
                 }
-                
-            case .failure(_):
-                uSelf.errorOccured?(true)
+            })
+            
+        case .fromDisk, .cached:
+            if let favoriteItem = FavoritesDataLoader.favorites.first(where: {$0.record == item as? Record})?.details {
+                self.items.append(favoriteItem)
             }
-        })
+        }
+        
+        
     }
     
     
+}
+
+public extension BehaviorRelay where Element: RangeReplaceableCollection {
+    
+    func append(_ subElement: Element.Element) {
+        var newValue = value
+        newValue.append(subElement)
+        accept(newValue)
+    }
+    
+    func insert(contentsOf newSubelements: Element, at index: Element.Index) {
+        var newValue = value
+        newValue.insert(contentsOf: newSubelements, at: index)
+        accept(newValue)
+    }
 }

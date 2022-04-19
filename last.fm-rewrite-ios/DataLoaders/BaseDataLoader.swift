@@ -12,16 +12,20 @@ import Moya
 import ProgressHUD
 
 
-class BaseDataLoader<Item>: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class BaseDataLoader<Item: Hashable>: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         
     let disposeBag = DisposeBag()
     var request: Cancellable?
-    var items: BehaviorRelay<[Item]> = BehaviorRelay.init(value: [Item]())
+    var items = BehaviorRelay<[Item]>(value: [Item]())
     var isLoading: BehaviorRelay<Bool> = BehaviorRelay.init(value: false)
     var errorOccured:((Bool) -> Void)?
     weak var collectionView: UICollectionView?
     var didSelect:((_ collectionView: UICollectionView, _ indexPath: IndexPath, _ item: Item) -> Void)?
-
+    
+    class var favorites: [Item] {
+        get { return [] }
+        set {}
+    }
     
     var baseCellIdentifier: String {
         return "BaseCellIdentifier"
@@ -110,17 +114,24 @@ class BaseDataLoader<Item>: NSObject, UICollectionViewDelegate, UICollectionView
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        return UICollectionReusableView()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return .zero
+    }
+    
     //MARK: - Items Loading
     
     func loadItems(isPagging: Bool) {
+       
     }
     
     func onPagination(indexPath: IndexPath) {
        
     }
-    
-    func loadDetails<T>(item: T) {
-        
-    }
-    
+
 }
+
+

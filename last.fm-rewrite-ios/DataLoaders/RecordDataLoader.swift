@@ -9,7 +9,7 @@ import UIKit
 import ProgressHUD
 
 class RecordsDataLoader: BaseDataLoader<Record> {
-   
+    
     override func loadItems(isPagging: Bool) {
         
         guard let tag = RecordTag.generateNextTag() else { return }

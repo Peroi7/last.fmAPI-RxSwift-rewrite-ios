@@ -16,6 +16,35 @@ class RecordDetailsViewController: BaseRecordDetailsViewController<RecordDetail,
         
     }
     
+    //MARK: - On Favorite
+    
+    override func onFavorite() {
+        let isFavorite = record.isFavorite
+        guard let recordDetails = dataLoader.items.value.first else { return }
+        let favoriteItem = FavoriteItem.init(record: record, details: recordDetails)
+        if isFavorite {
+            FavoritesDataLoader.favorites.removeAll(where: {$0.record.ident == favoriteItem.record.ident})
+            
+        } else {
+            if let image = recordImageView.image {
+                convertImageToData(image: image, key: favoriteItem.record.ident)
+            }
+            FavoritesDataLoader.favorites.append(favoriteItem)
+        }
+        
+        if !isFavorite {
+            NotificationCenter.default.post(name: .didAddToFavorites, object: nil)
+        }
+        
+        setFavoriteButtonImage(animated: isFavorite)
+
+    }
+    
+    fileprivate func convertImageToData(image: UIImage, key: String) {
+        guard let imageData = image.jpegData(compressionQuality: 100) else { return }
+        UserDefaults.standard.set(imageData, forKey: key)
+    }
+    
     override func expand() {
         isExpanded = !isExpanded
         setExpanded(isExpanded: isExpanded, animated: true)
@@ -58,7 +87,6 @@ class RecordDetailsViewController: BaseRecordDetailsViewController<RecordDetail,
     //MARK: - Expand Top Tracks
     
     func setExpanded(isExpanded: Bool, animated: Bool) {
-        guard let stackView = topTracksView.stackView else { return }
         guard let uItems = dataLoader.items.value.first?.topTracks?.tracks else { return }
         
         if isExpanded {
@@ -67,7 +95,7 @@ class RecordDetailsViewController: BaseRecordDetailsViewController<RecordDetail,
                 viewItem.font = UIFont.systemFont(ofSize: 15.0, weight: .bold)
                 viewItem.text = uItem.name
                 viewItem.autoSetDimension(.height, toSize: Constants.stackViewItemSize)
-                stackView.addArrangedSubview(viewItem)
+                topTracksView.stackView.addArrangedSubview(viewItem)
                 // strange animation with xib file
             }
         }
