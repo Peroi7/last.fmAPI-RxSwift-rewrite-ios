@@ -31,10 +31,7 @@ class RecordDetailsViewController: BaseRecordDetailsViewController<RecordDetail,
             FavoritesDataLoader.favorites.append(favoriteItem)
         }
         
-        if !isFavorite {
-            NotificationCenter.default.post(name: .didAddToFavorites, object: nil)
-        }
-        
+        NotificationCenter.default.post(name: .didAddToFavorites, object: nil)
         setFavoriteButtonImage(animated: isFavorite)
     }
     

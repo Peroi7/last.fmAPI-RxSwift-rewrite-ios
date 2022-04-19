@@ -949,7 +949,7 @@
 		97D610A084A37B536498B955D9EAAE32 /* UIImage+ExtendedCacheData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ExtendedCacheData.m"; path = "SDWebImage/Core/UIImage+ExtendedCacheData.m"; sourceTree = "<group>"; };
 		9813D23B099279DC75B2FA8A56E906D0 /* SynchronizedDisposeType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SynchronizedDisposeType.swift; path = RxSwift/Concurrency/SynchronizedDisposeType.swift; sourceTree = "<group>"; };
 		990B11C6C01D6136ADF72699EA49420A /* RxTableViewDataSourcePrefetchingProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxTableViewDataSourcePrefetchingProxy.swift; path = RxCocoa/iOS/Proxies/RxTableViewDataSourcePrefetchingProxy.swift; sourceTree = "<group>"; };
-		99B23BD0AB0A675CB0F54D8876BA0903 /* Pods-last.fm-rewrite-ios */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-last.fm-rewrite-ios"; path = Pods_last_fm_rewrite_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		99B23BD0AB0A675CB0F54D8876BA0903 /* Pods_last_fm_rewrite_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_last_fm_rewrite_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99D779EF8B3020061FD5A8F09BF52E81 /* RxCocoa.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RxCocoa.h; path = RxCocoa/RxCocoa.h; sourceTree = "<group>"; };
 		9A3AD680F2E24639928EA1EB2ECE10B5 /* Queue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Queue.swift; path = Platform/DataStructures/Queue.swift; sourceTree = "<group>"; };
 		9B33FECBA16AB24F66BF08FDE3DDA17C /* URLRequest+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLRequest+Alamofire.swift"; path = "Source/URLRequest+Alamofire.swift"; sourceTree = "<group>"; };
@@ -959,7 +959,7 @@
 		9CE1BFA8118960917698DBCD6A0423EA /* SectionedViewDataSourceType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SectionedViewDataSourceType.swift; path = RxCocoa/Common/SectionedViewDataSourceType.swift; sourceTree = "<group>"; };
 		9CE556F6482F26DA83611B3B8A33342F /* AsyncSubject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncSubject.swift; path = RxSwift/Subjects/AsyncSubject.swift; sourceTree = "<group>"; };
 		9D8DF389EAE784C0D87C2757CD97268A /* SDFileAttributeHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDFileAttributeHelper.m; path = SDWebImage/Private/SDFileAttributeHelper.m; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E39DD1D1EA7189DEBCCDDFA700061FD /* Infallible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Infallible.swift; path = RxSwift/Traits/Infallible/Infallible.swift; sourceTree = "<group>"; };
 		9F224FD964A03468A115600B005F327C /* SDWebImageOptionsProcessor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageOptionsProcessor.m; path = SDWebImage/Core/SDWebImageOptionsProcessor.m; sourceTree = "<group>"; };
 		9FB5F97E6A578D41E9424DA7F7498458 /* Debug.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debug.swift; path = RxSwift/Observables/Debug.swift; sourceTree = "<group>"; };
@@ -1411,7 +1411,6 @@
 				F159C915B64C1B47DCE2C0378C308694 /* WKWebView+Rx.swift */,
 				2132435C901B8F21579992345D02EB2E /* Support Files */,
 			);
-			name = RxCocoa;
 			path = RxCocoa;
 			sourceTree = "<group>";
 		};
@@ -1458,7 +1457,7 @@
 			children = (
 				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */,
 				3756A9BBE41ABEE8DCBF5BCA6972C4DA /* Moya */,
-				99B23BD0AB0A675CB0F54D8876BA0903 /* Pods-last.fm-rewrite-ios */,
+				99B23BD0AB0A675CB0F54D8876BA0903 /* Pods_last_fm_rewrite_ios.framework */,
 				0D3287058D2F13BD484A454154BEA62B /* ProgressHUD */,
 				E4E7B3DD46ABB0DBBB56BD5AE90E4911 /* PureLayout */,
 				BC432FD48A5932251F1CAFBC4BF74894 /* RxCocoa */,
@@ -1555,7 +1554,6 @@
 				A5A14145894878C14D07501CCBF177B0 /* Validation.swift */,
 				08DE450641DD27277DE8A5ADB9AB3A4F /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -1569,7 +1567,6 @@
 				925EDBE528443643163471CC2C72841F /* Utils.swift */,
 				05C470F2C7FD84AAD623CF4B0013BC06 /* Support Files */,
 			);
-			name = RxRelay;
 			path = RxRelay;
 			sourceTree = "<group>";
 		};
@@ -1594,7 +1591,6 @@
 				B1039A15254A9E3CF38416E901725677 /* Core */,
 				3957878F8E8F629A24B8C75FA9AF012C /* Support Files */,
 			);
-			name = SDWebImage;
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
@@ -1761,7 +1757,6 @@
 				121166ABB310A7393491F28CFEA6A6BE /* PureLayoutDefines.h */,
 				61FF4D0FDEDD1F080329701F2A8FBE29 /* Support Files */,
 			);
-			name = PureLayout;
 			path = PureLayout;
 			sourceTree = "<group>";
 		};
@@ -1786,7 +1781,6 @@
 				E78EC33F9FF3DB4F8D1021DB54873494 /* Core */,
 				BC7651A1437387D5D2DB6291B3668406 /* Support Files */,
 			);
-			name = Moya;
 			path = Moya;
 			sourceTree = "<group>";
 		};
@@ -1976,7 +1970,6 @@
 				2CAD4296084D46ABCBE9FADE858013ED /* Zip+Collection.swift */,
 				97BA325BCDE860791B984D643E0AD07E /* Support Files */,
 			);
-			name = RxSwift;
 			path = RxSwift;
 			sourceTree = "<group>";
 		};
@@ -2034,7 +2027,6 @@
 				80E8945C1C57ABB2AB276642D32C4613 /* ProgressHUD.swift */,
 				5A90CBE85C28C0539325B43E50FFF737 /* Support Files */,
 			);
-			name = ProgressHUD;
 			path = ProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -2336,7 +2328,7 @@
 			);
 			name = "Pods-last.fm-rewrite-ios";
 			productName = Pods_last_fm_rewrite_ios;
-			productReference = 99B23BD0AB0A675CB0F54D8876BA0903 /* Pods-last.fm-rewrite-ios */;
+			productReference = 99B23BD0AB0A675CB0F54D8876BA0903 /* Pods_last_fm_rewrite_ios.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		EA9EA43B3B503823EE36C60D9C8A865F /* RxSwift */ = {
