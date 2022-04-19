@@ -192,7 +192,6 @@
 				975DF3E927FC5BEE00350744 /* LoadingCell.swift */,
 				971715A8280E0A1F00D46566 /* FavoriteRecordCollectionViewCell.xib */,
 				971715AA280E0B8A00D46566 /* FavoriteRecordCollectionViewCell.swift */,
-				9731724B280E354400E74E14 /* FavoritesEmptyStateHeaderView.swift */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -316,6 +315,7 @@
 				9720034827F862CD008D35DD /* CustomLabel.swift */,
 				9720034027F7BE2D008D35DD /* ShadowView.swift */,
 				97C1AE9227FFC56800B5B637 /* LoadingView.swift */,
+				9731724B280E354400E74E14 /* FavoritesEmptyStateHeaderView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
