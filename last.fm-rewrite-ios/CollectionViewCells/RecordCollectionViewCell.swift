@@ -12,7 +12,6 @@ class RecordCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var wrapperView: UIView!
     @IBOutlet weak var recordImageView: UIImageView!
-    @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var recordTitleLabel: CustomLabel!
     
     //MARK: - Record

@@ -30,7 +30,7 @@
 		9720035C27F8C3B4008D35DD /* TopRecordsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9720035B27F8C3B4008D35DD /* TopRecordsResponse.swift */; };
 		9720035E27F8C48E008D35DD /* RecordImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9720035D27F8C48E008D35DD /* RecordImage.swift */; };
 		9720036027FB0ADB008D35DD /* NetworkData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9720035F27FB0ADB008D35DD /* NetworkData.plist */; };
-		9731724C280E354400E74E14 /* FavoritesEmptyStateHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9731724B280E354400E74E14 /* FavoritesEmptyStateHeaderView.swift */; };
+		9731724C280E354400E74E14 /* EmptyStateHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9731724B280E354400E74E14 /* EmptyStateHeaderView.swift */; };
 		97317250280EC42F00E74E14 /* RxExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9731724F280EC42F00E74E14 /* RxExtensions.swift */; };
 		97317254280ECFFB00E74E14 /* RecordsOverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97317253280ECFFB00E74E14 /* RecordsOverviewController.swift */; };
 		97452DAB27F6FE6200BBA456 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97452DAA27F6FE6200BBA456 /* AppDelegate.swift */; };
@@ -64,6 +64,10 @@
 		97C1AE8F27FF8E9300B5B637 /* RecordDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C1AE8E27FF8E9300B5B637 /* RecordDetailsViewController.swift */; };
 		97C1AE9127FFC46E00B5B637 /* PrimitiveTypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C1AE9027FFC46D00B5B637 /* PrimitiveTypeExtensions.swift */; };
 		97C1AE9327FFC56800B5B637 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C1AE9227FFC56800B5B637 /* LoadingView.swift */; };
+		97E8513C280ED9DB00F5403D /* SearchDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E8513B280ED9DB00F5403D /* SearchDataLoader.swift */; };
+		97E8514228105EEE00F5403D /* SarchResultsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E8514128105EEE00F5403D /* SarchResultsResponse.swift */; };
+		97E8514428106A0700F5403D /* SearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E8514328106A0700F5403D /* SearchResultCollectionViewCell.swift */; };
+		97E851482810AF5500F5403D /* SearchResultCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97E851472810AF5500F5403D /* SearchResultCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,7 +94,7 @@
 		9720035B27F8C3B4008D35DD /* TopRecordsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRecordsResponse.swift; sourceTree = "<group>"; };
 		9720035D27F8C48E008D35DD /* RecordImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordImage.swift; sourceTree = "<group>"; };
 		9720035F27FB0ADB008D35DD /* NetworkData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = NetworkData.plist; sourceTree = "<group>"; };
-		9731724B280E354400E74E14 /* FavoritesEmptyStateHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesEmptyStateHeaderView.swift; sourceTree = "<group>"; };
+		9731724B280E354400E74E14 /* EmptyStateHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateHeaderView.swift; sourceTree = "<group>"; };
 		9731724F280EC42F00E74E14 /* RxExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxExtensions.swift; sourceTree = "<group>"; };
 		97317253280ECFFB00E74E14 /* RecordsOverviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsOverviewController.swift; sourceTree = "<group>"; };
 		97452DA727F6FE6200BBA456 /* last.fm-rewrite-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "last.fm-rewrite-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +130,10 @@
 		97C1AE8E27FF8E9300B5B637 /* RecordDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailsViewController.swift; sourceTree = "<group>"; };
 		97C1AE9027FFC46D00B5B637 /* PrimitiveTypeExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimitiveTypeExtensions.swift; sourceTree = "<group>"; };
 		97C1AE9227FFC56800B5B637 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		97E8513B280ED9DB00F5403D /* SearchDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataLoader.swift; sourceTree = "<group>"; };
+		97E8514128105EEE00F5403D /* SarchResultsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SarchResultsResponse.swift; sourceTree = "<group>"; };
+		97E8514328106A0700F5403D /* SearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
+		97E851472810AF5500F5403D /* SearchResultCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultCollectionViewCell.xib; sourceTree = "<group>"; };
 		B99EF20EA60627DF044C2A5A /* Pods-last.fm-rewrite-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-last.fm-rewrite-ios.debug.xcconfig"; path = "Target Support Files/Pods-last.fm-rewrite-ios/Pods-last.fm-rewrite-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		BCE722142C8D99B6F4E4E70E /* Pods-last.fm-rewrite-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-last.fm-rewrite-ios.release.xcconfig"; path = "Target Support Files/Pods-last.fm-rewrite-ios/Pods-last.fm-rewrite-ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -192,6 +200,8 @@
 				975DF3E927FC5BEE00350744 /* LoadingCell.swift */,
 				971715A8280E0A1F00D46566 /* FavoriteRecordCollectionViewCell.xib */,
 				971715AA280E0B8A00D46566 /* FavoriteRecordCollectionViewCell.swift */,
+				97E851472810AF5500F5403D /* SearchResultCollectionViewCell.xib */,
+				97E8514328106A0700F5403D /* SearchResultCollectionViewCell.swift */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -212,6 +222,7 @@
 				9720035527F89DA3008D35DD /* RecordsResponse.swift */,
 				9720035B27F8C3B4008D35DD /* TopRecordsResponse.swift */,
 				97C1AE8827FF1B0D00B5B637 /* RecordDetailsResponse.swift */,
+				97E8514128105EEE00F5403D /* SarchResultsResponse.swift */,
 				9720035F27FB0ADB008D35DD /* NetworkData.plist */,
 			);
 			path = Network;
@@ -295,6 +306,7 @@
 				975DF3E527FBAA7100350744 /* RecordDataLoader.swift */,
 				97C1AE8C27FF89ED00B5B637 /* RecordDetailsDataLoader.swift */,
 				97524A702800A5B500D52178 /* FavoritesDataLoader.swift */,
+				97E8513B280ED9DB00F5403D /* SearchDataLoader.swift */,
 			);
 			path = DataLoaders;
 			sourceTree = "<group>";
@@ -315,7 +327,7 @@
 				9720034827F862CD008D35DD /* CustomLabel.swift */,
 				9720034027F7BE2D008D35DD /* ShadowView.swift */,
 				97C1AE9227FFC56800B5B637 /* LoadingView.swift */,
-				9731724B280E354400E74E14 /* FavoritesEmptyStateHeaderView.swift */,
+				9731724B280E354400E74E14 /* EmptyStateHeaderView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -402,6 +414,7 @@
 				9720033D27F7B7B5008D35DD /* Colors.xcassets in Resources */,
 				97452DB427F6FE6700BBA456 /* Assets.xcassets in Resources */,
 				97C1AE7D27FDB95000B5B637 /* RecordTracksView.xib in Resources */,
+				97E851482810AF5500F5403D /* SearchResultCollectionViewCell.xib in Resources */,
 				971715A9280E0A1F00D46566 /* FavoriteRecordCollectionViewCell.xib in Resources */,
 				97C1AE8127FE5C9600B5B637 /* RecordInfoView.xib in Resources */,
 				9720036027FB0ADB008D35DD /* NetworkData.plist in Resources */,
@@ -466,6 +479,7 @@
 				9720033327F7B2E5008D35DD /* SearchViewController.swift in Sources */,
 				9720033527F7B300008D35DD /* FavoritesViewController.swift in Sources */,
 				97C1AE8927FF1B0D00B5B637 /* RecordDetailsResponse.swift in Sources */,
+				97E8514228105EEE00F5403D /* SarchResultsResponse.swift in Sources */,
 				97524A712800A5B500D52178 /* FavoritesDataLoader.swift in Sources */,
 				975DF3F327FD086300350744 /* BaseRecordDetailsViewController.swift in Sources */,
 				97C1AE8D27FF89EE00B5B637 /* RecordDetailsDataLoader.swift in Sources */,
@@ -474,7 +488,8 @@
 				9720033727F7B3A2008D35DD /* UIViewControllerExtensions.swift in Sources */,
 				975DF3EF27FCA02C00350744 /* Constans.swift in Sources */,
 				9720035827F8BDDC008D35DD /* Record.swift in Sources */,
-				9731724C280E354400E74E14 /* FavoritesEmptyStateHeaderView.swift in Sources */,
+				9731724C280E354400E74E14 /* EmptyStateHeaderView.swift in Sources */,
+				97E8513C280ED9DB00F5403D /* SearchDataLoader.swift in Sources */,
 				975DF3E627FBAA7100350744 /* RecordDataLoader.swift in Sources */,
 				97524A7728039FD100D52178 /* UserDefaultsExtensions.swift in Sources */,
 				975DF3E427FB66F600350744 /* BaseDataLoader.swift in Sources */,
@@ -482,6 +497,7 @@
 				97C1AE9327FFC56800B5B637 /* LoadingView.swift in Sources */,
 				975DF3E127FB482D00350744 /* URLExtensions.swift in Sources */,
 				9720035E27F8C48E008D35DD /* RecordImage.swift in Sources */,
+				97E8514428106A0700F5403D /* SearchResultCollectionViewCell.swift in Sources */,
 				97C1AE8B27FF1BA700B5B637 /* RecordDetail.swift in Sources */,
 				97524A7328036BB700D52178 /* FavoriteItem.swift in Sources */,
 				97524A7528039E1600D52178 /* NotificationNameExtensions.swift in Sources */,

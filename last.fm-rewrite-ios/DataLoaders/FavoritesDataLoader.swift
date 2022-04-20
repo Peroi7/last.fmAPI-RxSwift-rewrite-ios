@@ -14,9 +14,10 @@ class FavoritesDataLoader: BaseDataLoader<FavoriteItem> {
     
     fileprivate static var keyAllFavorites = "allFavorites"
     fileprivate var favoriteCellIdentifier = "FavoriteCellIdentifier"
-    fileprivate var emptyStateHeaderIdentifier = "EmptyStateHeaderIdentifier"
-
+    override var headerTitle: String { return "No favorite added."}
         
+    //MARK: - Favorites
+    
    override class var favorites: [FavoriteItem] {
         get { UserDefaults.standard.getData([FavoriteItem].self, forKey:  keyAllFavorites) ?? []
         }
@@ -24,10 +25,12 @@ class FavoritesDataLoader: BaseDataLoader<FavoriteItem> {
         }
     }
     
+    //MARK: - CollectionView Setup
+    
     override func setupCollectionView(collectionView: UICollectionView) {
         super.setupCollectionView(collectionView: collectionView)
         collectionView.register(FavoriteRecordCollectionViewCell.nib, forCellWithReuseIdentifier: favoriteCellIdentifier)
-        collectionView.register(FavoritesEmptyStateHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: emptyStateHeaderIdentifier)
+        collectionView.register(EmptyStateHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: emptyStateHeaderIdentifier)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -60,6 +63,8 @@ class FavoritesDataLoader: BaseDataLoader<FavoriteItem> {
         }
     }
     
+    //MARK: - CollectionViewCell Sizing
+    
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: collectionView.frame.width, height: 86.0)
     }
@@ -73,7 +78,8 @@ class FavoritesDataLoader: BaseDataLoader<FavoriteItem> {
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: emptyStateHeaderIdentifier, for: indexPath) as! FavoritesEmptyStateHeaderView
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: emptyStateHeaderIdentifier, for: indexPath) as! EmptyStateHeaderView
+        header.setupTitle(title: headerTitle)
         return header
     }
     

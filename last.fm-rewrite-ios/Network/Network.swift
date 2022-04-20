@@ -15,6 +15,7 @@ enum Network {
     
     case recordDetails(tag: String)
     case recordDetailsExtended(artist: String, album: String)
+    case artistSearchResults(artist: String)
     
     fileprivate var apiKey: Any {
         return Bundle.main.propertyValue(resource: "NetworkData", key: "api_key")
@@ -26,6 +27,8 @@ enum Network {
             return recordDetails(tag: tag)
         case .recordDetailsExtended(let artist, let album):
             return recordDetailsExtended(artist: artist, album: album)
+        case .artistSearchResults(artist: let artist):
+            return artistSearchResults(artist: artist)
         }
     }
 }
@@ -36,7 +39,7 @@ extension Network: TargetType {
     
     var baseURL: URL {
         switch self {
-        case .recordDetails, .recordDetailsExtended:
+        case .recordDetails, .recordDetailsExtended, .artistSearchResults:
             return URL.withQuery(baseURL: "http://ws.audioscrobbler.com/2.0/", queryName: "method", value: queryValue)
         }
     }
@@ -47,12 +50,14 @@ extension Network: TargetType {
             return "tag.gettopalbums"
         case .recordDetailsExtended:
             return "album.getinfo"
+        case .artistSearchResults:
+            return "artist.search"
         }
     }
     
     var path: String {
         switch self {
-        case .recordDetails, .recordDetailsExtended:
+        case .recordDetails, .recordDetailsExtended,.artistSearchResults:
             return ""
         }
     
@@ -60,7 +65,7 @@ extension Network: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .recordDetails, .recordDetailsExtended:
+        case .recordDetails, .recordDetailsExtended, .artistSearchResults:
             return .get
         }
     }
@@ -81,6 +86,13 @@ extension Network: TargetType {
                               "format" : FormatType.json
             ]
             return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
+        case .artistSearchResults(artist: let artist):
+            let parameters = ["artist" : artist,
+                              "api_key" : apiKey,
+                              "format" : FormatType.json
+            ]
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
+
         }
     }
     
@@ -115,6 +127,9 @@ extension Moya.Response {
         return try JSONDecoder().decode(RecordDetailsResponse.self, from: data)
     }
     
+    func mapSearchResults() throws -> SearchResultsResponse {
+        return try JSONDecoder().decode(SearchResultsResponse.self, from: data)
+    }
 }
 
 //MARK: - Format Type

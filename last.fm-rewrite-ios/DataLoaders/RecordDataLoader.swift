@@ -51,8 +51,6 @@ class RecordsDataLoader: BaseDataLoader<Record> {
         
     }
     
-    override var baseCellIdentifier: String { return "RecordCellIdentifier"}
-    
     override func setupCollectionView(collectionView: UICollectionView) {
         super.setupCollectionView(collectionView: collectionView)
         collectionView.register(RecordCollectionViewCell.nib, forCellWithReuseIdentifier: recordCellIdentifier)
