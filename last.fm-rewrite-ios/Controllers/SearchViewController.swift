@@ -7,16 +7,16 @@
 
 import UIKit
 
-class SearchViewController: BaseViewController<Record, RecordsDataLoader> {
+class SearchViewController: BaseViewController<Artist, SearchDataLoader> {
+    
+    fileprivate let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.prefersLargeTitles = false
-    }
-    
-    override func setupNavigationBarAppearance(background: UIColor) {
-        super.setupNavigationBarAppearance(background: .white)
+        navigationItem.title = "Search for artists"
+        dataLoader.configSearchController(searchController: searchController)
+        navigationItem.searchController = searchController
     }
     
 }

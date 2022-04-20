@@ -20,7 +20,7 @@ class BaseViewController<T: Codable, DataLoader: BaseDataLoader<T>>: UIViewContr
         super.viewDidLoad()
         
         setupUI()
-        setupNavigationBarAppearance(background: ColorTheme.primaryBackground)
+        setupNavigationBarAppearance()
         showToast()
     }
     
@@ -63,11 +63,11 @@ class BaseViewController<T: Codable, DataLoader: BaseDataLoader<T>>: UIViewContr
     
     //MARK: - NavigationBar Appearance
     
-    func setupNavigationBarAppearance(background: UIColor) {
+    func setupNavigationBarAppearance() {
         if #available(iOS 15, *) {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
-            appearance.backgroundColor = background
+            appearance.backgroundColor = ColorTheme.primaryBackground
             appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
             appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
             navigationController?.navigationBar.prefersLargeTitles = true

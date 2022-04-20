@@ -18,7 +18,6 @@ class RecordsOverviewController: BaseViewController<Record, RecordsDataLoader> {
             let recordDetailsViewController = RecordDetailsViewController(item: item, loaderType: FavoritesDataLoader.favorites.contains(where: {$0.record.ident == item.ident}) ? .cached : .api)
             uSelf.navigationController?.pushViewController(recordDetailsViewController, animated: true)
         }
-        
     }
 }
 

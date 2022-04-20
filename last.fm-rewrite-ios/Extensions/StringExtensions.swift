@@ -13,3 +13,14 @@ extension String {
         return Int(self)!
     }
 }
+
+extension String {
+    
+    func isBlankOrEmpty() -> Bool {
+
+      if self.isEmpty {
+          return true
+      }
+      return (self.trimmingCharacters(in: .whitespaces) == "")
+   }
+}

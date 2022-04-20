@@ -54,7 +54,7 @@ class BaseDataLoader<Item>: NSObject, UICollectionViewDelegate, UICollectionView
         collectionView.collectionViewLayout = layout
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(UICollectionViewCell.nib, forCellWithReuseIdentifier: baseCellIdentifier)
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: baseCellIdentifier)
     }
     
     //MARK: - UICollectionViewDataSource
