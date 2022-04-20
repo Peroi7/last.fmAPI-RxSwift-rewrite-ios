@@ -55,6 +55,8 @@ class BaseRecordDetailsViewController<T: Codable, DataLoader: RecordDetailsDataL
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - View Lifecylce
+    
     override func viewDidLoad() {
         super.viewDidLoad()
                 
@@ -164,6 +166,8 @@ class BaseRecordDetailsViewController<T: Codable, DataLoader: RecordDetailsDataL
         super.viewWillAppear(animated)
         setFavoriteButtonImage(animated: false)
     }
+    
+    //MARK: - FavoriteButton Setup
     
    func setFavoriteButtonImage(animated: Bool) {
         let animations = {

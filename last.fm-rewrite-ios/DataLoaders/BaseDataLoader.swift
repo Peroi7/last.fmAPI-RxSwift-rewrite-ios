@@ -27,12 +27,20 @@ class BaseDataLoader<Item>: NSObject, UICollectionViewDelegate, UICollectionView
         set {}
     }
     
+    var headerTitle: String {
+        return ""
+    }
+    
     var baseCellIdentifier: String {
         return "BaseCellIdentifier"
     }
     
     var loadingCellIdentifier: String {
         return "LoadingCellIdentifier"
+    }
+    
+    var emptyStateHeaderIdentifier: String {
+       return "EmptyStateHeaderIdentifier"
     }
     
     required override init() {
@@ -43,7 +51,6 @@ class BaseDataLoader<Item>: NSObject, UICollectionViewDelegate, UICollectionView
                 self?.collectionView?.reloadData()
             }
         }).disposed(by: disposeBag)
-        
     }
 
     //MARK: - UICollectionView Setup
