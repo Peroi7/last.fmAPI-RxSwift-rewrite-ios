@@ -11,7 +11,7 @@ import RxSwift
 class FavoritesViewController: BaseViewController<FavoriteItem, FavoritesDataLoader> {
     
     fileprivate let disposeBag = DisposeBag()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,7 +33,7 @@ class FavoritesViewController: BaseViewController<FavoriteItem, FavoritesDataLoa
 extension FavoritesViewController {
     
     //MARK: - Delete Favorite Item
-
+    
     func onFavoriteItemRemoved() {
         dataLoader.onDelete.subscribe(onNext: {[weak self] (ident, index) in
             guard let uSelf = self else { return }

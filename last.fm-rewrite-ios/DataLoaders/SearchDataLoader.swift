@@ -17,7 +17,6 @@ class SearchDataLoader: BaseDataLoader<Artist>, UISearchControllerDelegate {
     fileprivate let minimumCharacterInput = 2
     override var headerTitle: String { return "No search results." }
     
-    
     //MARK: - Load Data
     
     func loadSearchResults(input: String) {
@@ -139,7 +138,7 @@ extension SearchDataLoader: UISearchBarDelegate {
     //MARK: - UISearchBarDelegate
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-       onSearchBarDismiss()
+        onSearchBarDismiss()
     }
 }
 

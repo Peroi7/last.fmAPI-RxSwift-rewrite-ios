@@ -10,12 +10,11 @@ import ProgressHUD
 import RxSwift
 
 class ArtistDetailsViewController: BaseRecordDetailsViewController<Artist, ArtistDetailsDataLoader> {
-                
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         onErrorOccured()
-        
         dataLoader.requestCompleted =  {[weak self] in
             guard let uSelf = self else { return }
             guard let uItem = uSelf.dataLoader.items.value.first else { return }
@@ -65,7 +64,7 @@ class ArtistDetailsViewController: BaseRecordDetailsViewController<Artist, Artis
             topTracksView.recordTrackLabel.text = item.topTracks.first?.name
             topTracksView.alpha = 1
             
-            //API is so messed up
+            //JSON is so messed up
             
         }
     }
@@ -78,7 +77,7 @@ extension ArtistDetailsViewController {
     func onErrorOccured() {
         dataLoader.errorOccured = { isError in
             guard isError else { return }
-            let noDataView = EmptyDataView(viewController: self, message: "Something went wrong. Probably missing data.", actionTitle: "Ok")
+            let noDataView = EmptyDataView(viewController: self, message: "Something went wrong. Probably missing data.", actionTitle: "Ok") // could be constant or localized string also
             noDataView.fire()
             noDataView.onActionCompletion = { [weak self] in
                 ProgressHUD.dismiss()

@@ -35,14 +35,13 @@ class BaseRecordDetailsViewController<T: Codable, DataLoader: BaseDataLoader<T>>
     var loadingView: LoadingView!
     
     var infoStackViewHeight: NSLayoutConstraint!
+    var isExpanded: Bool = false
     
     let dataLoader = DataLoader()
     let disposeBag = DisposeBag()
     let item: Any
     var loaderType: LoaderType = .recordDetails
-    
-    var isExpanded: Bool = false
-    
+        
     enum LoaderType {
         case recordDetails
         case artistDetails
@@ -100,15 +99,13 @@ class BaseRecordDetailsViewController<T: Codable, DataLoader: BaseDataLoader<T>>
         recordImageView.layer.masksToBounds = true
 
         recordArtistLabel = UILabel.newAutoLayout()
+        recordArtistLabel.textAlignment = .center
+        recordArtistLabel.numberOfLines = 0
         recordArtistLabel.font = UIFont.systemFont(ofSize: loaderType != .artistDetails ? 20.0 : 17.0, weight: loaderType != .artistDetails ? .bold : .medium)
         if loaderType == .artistDetails {
             recordArtistLabel.textColor = .black.withAlphaComponent(0.5)
         }
-        recordArtistLabel.textAlignment = .center
-        recordArtistLabel.numberOfLines = 0
         
-        descriptionView = DescriptionView.fromNib()
-
         containerView.addSubview(recordArtistLabel)
         recordArtistLabel.autoPinEdge(.top, to: .bottom, of: recordImageView, withOffset: Constants.paddingDefault)
         recordArtistLabel.autoSetDimension(.height, toSize: 48.0)
@@ -149,6 +146,7 @@ class BaseRecordDetailsViewController<T: Codable, DataLoader: BaseDataLoader<T>>
         infoStackViewHeight.isActive = true
         
         if loaderType == .artistDetails {
+            descriptionView = DescriptionView.fromNib()
             containerView.addSubview(descriptionView)
             descriptionView.autoPinEdge(.top, to: .bottom, of: recordInfoView, withOffset: Constants.paddingDefaultSmall)
             descriptionView.autoPinEdge(.left, to: .left, of: containerView)

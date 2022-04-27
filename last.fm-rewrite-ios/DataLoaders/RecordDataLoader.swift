@@ -13,7 +13,7 @@ class RecordsDataLoader: BaseDataLoader<Record> {
     fileprivate let recordCellIdentifier = "RecordCellIdentifier"
     
     override func loadItems(isPagging: Bool, title: String? = nil) {
-               
+        
         var api: Network?
         
         if let title = title {
@@ -24,7 +24,7 @@ class RecordsDataLoader: BaseDataLoader<Record> {
             // fancy way not receiving duplicates & ending data
             api = Network.api(type: .recordDetails(tag: tag.rawValue))
         }
-                
+        
         isLoading.accept(true)
         
         guard let api = api else {
@@ -96,5 +96,4 @@ class RecordsDataLoader: BaseDataLoader<Record> {
             recordCell.record = item(indexPath: indexPath)
         }
     }
-    
 }

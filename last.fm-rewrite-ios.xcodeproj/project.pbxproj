@@ -57,10 +57,8 @@
 		979D543E2818AA9C00E77CDE /* DescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 979D543D2818AA9C00E77CDE /* DescriptionView.xib */; };
 		979D54402818AC7800E77CDE /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979D543F2818AC7800E77CDE /* DescriptionView.swift */; };
 		979D544228195A5800E77CDE /* EmptyDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979D544128195A5800E77CDE /* EmptyDataView.swift */; };
-		979D54442819607D00E77CDE /* UIApplicationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979D54432819607D00E77CDE /* UIApplicationExtensions.swift */; };
 		979D54462819633300E77CDE /* ArtistDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979D54452819633300E77CDE /* ArtistDetailsViewController.swift */; };
 		979D544828197F5C00E77CDE /* ArtistTopRecordsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979D544728197F5C00E77CDE /* ArtistTopRecordsResponse.swift */; };
-		979D54502819918800E77CDE /* SDImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979D544F2819918800E77CDE /* SDImageView.swift */; };
 		97C1AE7D27FDB95000B5B637 /* RecordTracksView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97C1AE7C27FDB95000B5B637 /* RecordTracksView.xib */; };
 		97C1AE7F27FDD3A300B5B637 /* RecordTracksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C1AE7E27FDD3A300B5B637 /* RecordTracksView.swift */; };
 		97C1AE8127FE5C9600B5B637 /* RecordInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97C1AE8027FE5C9600B5B637 /* RecordInfoView.xib */; };
@@ -134,10 +132,8 @@
 		979D543D2818AA9C00E77CDE /* DescriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionView.xib; sourceTree = "<group>"; };
 		979D543F2818AC7800E77CDE /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 		979D544128195A5800E77CDE /* EmptyDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDataView.swift; sourceTree = "<group>"; };
-		979D54432819607D00E77CDE /* UIApplicationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtensions.swift; sourceTree = "<group>"; };
 		979D54452819633300E77CDE /* ArtistDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailsViewController.swift; sourceTree = "<group>"; };
 		979D544728197F5C00E77CDE /* ArtistTopRecordsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistTopRecordsResponse.swift; sourceTree = "<group>"; };
-		979D544F2819918800E77CDE /* SDImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDImageView.swift; sourceTree = "<group>"; };
 		97C1AE7C27FDB95000B5B637 /* RecordTracksView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordTracksView.xib; sourceTree = "<group>"; };
 		97C1AE7E27FDD3A300B5B637 /* RecordTracksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTracksView.swift; sourceTree = "<group>"; };
 		97C1AE8027FE5C9600B5B637 /* RecordInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordInfoView.xib; sourceTree = "<group>"; };
@@ -201,7 +197,6 @@
 				97524A7428039E1600D52178 /* NotificationNameExtensions.swift */,
 				97524A7628039FD100D52178 /* UserDefaultsExtensions.swift */,
 				9731724F280EC42F00E74E14 /* RxExtensions.swift */,
-				979D54432819607D00E77CDE /* UIApplicationExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -362,7 +357,6 @@
 				97C1AE9227FFC56800B5B637 /* LoadingView.swift */,
 				9731724B280E354400E74E14 /* EmptyStateHeaderView.swift */,
 				979D544128195A5800E77CDE /* EmptyDataView.swift */,
-				979D544F2819918800E77CDE /* SDImageView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -539,7 +533,6 @@
 				97524A6D28007D0500D52178 /* StringExtensions.swift in Sources */,
 				9720032D27F796F4008D35DD /* BaseViewController.swift in Sources */,
 				9720032F27F79716008D35DD /* MainTabBarController.swift in Sources */,
-				979D54502819918800E77CDE /* SDImageView.swift in Sources */,
 				9720034527F7C76E008D35DD /* RecordCollectionViewCell.swift in Sources */,
 				9720035C27F8C3B4008D35DD /* TopRecordsResponse.swift in Sources */,
 				9720034927F862CD008D35DD /* CustomLabel.swift in Sources */,
@@ -547,7 +540,6 @@
 				971715AB280E0B8A00D46566 /* FavoriteRecordCollectionViewCell.swift in Sources */,
 				97C1AE8F27FF8E9300B5B637 /* RecordDetailsViewController.swift in Sources */,
 				975DF3EA27FC5BEE00350744 /* LoadingCell.swift in Sources */,
-				979D54442819607D00E77CDE /* UIApplicationExtensions.swift in Sources */,
 				9720035127F89643008D35DD /* Network.swift in Sources */,
 				975DF3EC27FC9A5100350744 /* RecordTag.swift in Sources */,
 				9720035A27F8BE08008D35DD /* Artist.swift in Sources */,

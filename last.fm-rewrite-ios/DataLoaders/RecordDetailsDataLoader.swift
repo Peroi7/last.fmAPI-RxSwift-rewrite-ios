@@ -7,8 +7,6 @@
 
 import Foundation
 import RxCocoa
-import RxSwift
-
 
 class RecordDetailsDataLoader: BaseDataLoader<RecordDetail> {
     

@@ -70,7 +70,7 @@ extension Network: TargetType {
         case .recordDetails, .recordDetailsExtended,.artistSearchResults, .artistDetails, .artistTopRecords:
             return ""
         }
-    
+        
     }
     
     var method: Moya.Method {
@@ -117,7 +117,7 @@ extension Network {
     //MARK: - Fetching
     
     fileprivate static let provider = MoyaProvider<Network>(plugins: [NetworkLoggerPlugin()])
-        
+    
     func fetch(completion:@escaping Moya.Completion) -> Cancellable {
         return Network.provider.request(self) { (result) in
             completion(result)

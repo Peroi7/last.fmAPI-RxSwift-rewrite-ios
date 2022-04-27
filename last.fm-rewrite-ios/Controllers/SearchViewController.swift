@@ -33,6 +33,6 @@ extension SearchViewController {
         super.viewWillAppear(animated)
         
         navigationItem.title = "Search for artists"
-
+        
     }
 }

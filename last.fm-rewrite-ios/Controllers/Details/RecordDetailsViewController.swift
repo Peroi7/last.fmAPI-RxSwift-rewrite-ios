@@ -9,7 +9,7 @@ import UIKit
 import ProgressHUD
 
 class RecordDetailsViewController: BaseRecordDetailsViewController<RecordDetail, RecordDetailsDataLoader> {
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,14 +46,12 @@ class RecordDetailsViewController: BaseRecordDetailsViewController<RecordDetail,
     
     //MARK: - Config Item
     
-    
     override func config(item: RecordDetail) {
         super.config(item: item)
         
         listenersLabel.recordInfoSecondLabel.text = item.listeners.intValue.roundedWithAbbreviations
         playcountLabel.recordInfoSecondLabel.text = item.playcount.intValue.roundedWithAbbreviations
-        
-        
+    
         if let published = item.wiki?.published {
             recordInfoView.stackView.addArrangedSubview(publishedLabel)
             publishedLabel.recordInfoSecondLabel.text = published

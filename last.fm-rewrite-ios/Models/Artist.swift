@@ -45,7 +45,7 @@ struct Artist: Codable {
         self.info = try container.decodeIfPresent(ArtistInfo.self, forKey: .info) ?? .init()
         self.artistBio = try container.decodeIfPresent(ArtistBio.self, forKey: .artistBio) ?? .init()
         self.tags = try container.decodeIfPresent(ArtistTag.self, forKey: .tags) ?? .init()
-
+        
     }
     
     var defaultArtistImage: UIImage {
@@ -53,7 +53,7 @@ struct Artist: Codable {
     }
 }
 
-//MARK: - Hashable
+//MARK: - Equatable
 
 extension Artist: Equatable {
     
