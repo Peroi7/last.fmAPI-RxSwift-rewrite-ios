@@ -15,6 +15,12 @@ struct Record: Codable {
     let artist: Artist
     let image: [RecordImage]
     
+    init() {
+        name = ""
+        artist = Artist()
+        image = []
+    }
+    
     var imageURL: URL? {
         if let img = image.first(where: {$0.size == ImageSizeUrl.large.rawValue}) {
             return URL(string: img.url)

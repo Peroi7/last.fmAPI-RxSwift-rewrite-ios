@@ -15,7 +15,7 @@ class RecordsOverviewController: BaseViewController<Record, RecordsDataLoader> {
         dataLoader.loadItems(isPagging: false)
         dataLoader.didSelect = {[weak self] _,_,item in
             guard let uSelf = self else { return }
-            let recordDetailsViewController = RecordDetailsViewController(item: item, loaderType: FavoritesDataLoader.favorites.contains(where: {$0.record.ident == item.ident}) ? .cached : .api)
+            let recordDetailsViewController = RecordDetailsViewController(item: item, type: .recordDetails)
             uSelf.navigationController?.pushViewController(recordDetailsViewController, animated: true)
         }
     }

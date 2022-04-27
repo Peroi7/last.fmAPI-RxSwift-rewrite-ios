@@ -27,6 +27,8 @@ class BaseDataLoader<Item>: NSObject, UICollectionViewDelegate, UICollectionView
         set {}
     }
     
+    //MARK: - Identifiers
+
     var headerTitle: String {
         return ""
     }
@@ -131,13 +133,18 @@ class BaseDataLoader<Item>: NSObject, UICollectionViewDelegate, UICollectionView
     
     //MARK: - Items Loading
     
-    func loadItems(isPagging: Bool) {
+    func loadItems(isPagging: Bool, title: String? = nil) {
        
     }
     
     func onPagination(indexPath: IndexPath) {
        
     }
+    
+    func loadDetails<L>(item: L) {
+        
+    }
+
 
 }
 

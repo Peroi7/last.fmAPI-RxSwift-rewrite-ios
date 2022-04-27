@@ -12,7 +12,6 @@ import Foundation
 struct SearchResultsResponse: Codable {
     
     let results: SearchResultsArtistResponse
-    
 }
 
 struct SearchResultsArtistResponse: Codable {
@@ -32,5 +31,4 @@ struct SearchResultsArtistResponse: Codable {
 struct SearchResultsArtistEndResponse: Codable {
     
     let artist: [Artist]
-    
 }

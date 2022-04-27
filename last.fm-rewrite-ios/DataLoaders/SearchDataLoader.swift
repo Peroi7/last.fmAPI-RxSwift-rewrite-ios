@@ -76,10 +76,22 @@ class SearchDataLoader: BaseDataLoader<Artist>, UISearchControllerDelegate {
     func configSearchController(searchController: UISearchController) {
         self.searchController = searchController
         self.searchController?.delegate = self
+        self.searchController?.searchBar.searchTextField.delegate = self
         self.searchController?.searchBar.delegate = self
         self.searchController?.searchResultsUpdater = self
+        self.searchController?.obscuresBackgroundDuringPresentation = false
         self.searchController?.searchBar.searchTextField.backgroundColor = .white
         UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
+    }
+    
+    func onSearchBarDismiss() {
+        items.removeAll()
+        isLoading.accept(false)
+        searchController?.searchBar.resignFirstResponder()
+        searchController?.searchResultsController?.edgesForExtendedLayout = .all
+        searchController?.edgesForExtendedLayout = .all
+        searchController?.searchResultsController?.extendedLayoutIncludesOpaqueBars = true
+        timer = nil
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -95,6 +107,12 @@ class SearchDataLoader: BaseDataLoader<Artist>, UISearchControllerDelegate {
     override func configCell(cell: UICollectionViewCell, indexPath: IndexPath) {
         if let searchCell = cell as? SearchResultCollectionViewCell {
             searchCell.artist = item(indexPath: indexPath)
+        }
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let callback = didSelect {
+            callback(collectionView, indexPath, item(indexPath: indexPath))
         }
     }
     
@@ -121,12 +139,7 @@ extension SearchDataLoader: UISearchBarDelegate {
     //MARK: - UISearchBarDelegate
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        isLoading.accept(false)
-        items.accept([])
-        searchController?.searchResultsController?.edgesForExtendedLayout = .all
-        searchController?.edgesForExtendedLayout = .all
-        searchController?.searchResultsController?.extendedLayoutIncludesOpaqueBars = true
-        timer = nil
+       onSearchBarDismiss()
     }
 }
 
@@ -141,5 +154,15 @@ extension SearchDataLoader: UISearchResultsUpdating {
             timer = nil
             return }
         fireSearch(input: uInput)
+    }
+}
+
+extension SearchDataLoader: UITextFieldDelegate {
+    
+    //MARK: - UITextViewDelegate
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        onSearchBarDismiss()
+        return true
     }
 }

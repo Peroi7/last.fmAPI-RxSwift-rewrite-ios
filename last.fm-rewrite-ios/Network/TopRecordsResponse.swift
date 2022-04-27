@@ -19,7 +19,7 @@ struct TopRecordsResponse: Codable {
     
     init(from decoder: Decoder) throws {
         let container  = try decoder.container(keyedBy: CodingKeys.self)
-        topRecords = try container.decode([Record].self, forKey: .topRecords)
+        topRecords = try container.decodeIfPresent([Record].self, forKey: .topRecords) ??  []
     }
 }
    

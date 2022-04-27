@@ -39,6 +39,10 @@ struct Wiki: Codable, Equatable {
 
 struct Track: Codable, Equatable {
     let name: String
+    
+    init(name: String) {
+        self.name = name
+    }
 }
 
 struct TopTracks: Codable, Equatable {

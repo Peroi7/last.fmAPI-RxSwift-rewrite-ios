@@ -77,7 +77,7 @@
                 <outlet property="stackView" destination="NT1-17-T3r" id="HTv-JT-A6n"/>
                 <outlet property="wrapperView" destination="lrx-f4-LgT" id="gyo-Y4-PRj"/>
             </connections>
-            <point key="canvasLocation" x="111" y="-6"/>
+            <point key="canvasLocation" x="118" y="98"/>
         </view>
     </objects>
     <resources>

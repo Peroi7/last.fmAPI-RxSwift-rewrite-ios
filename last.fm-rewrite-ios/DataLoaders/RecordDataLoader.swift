@@ -12,15 +12,24 @@ class RecordsDataLoader: BaseDataLoader<Record> {
     
     fileprivate let recordCellIdentifier = "RecordCellIdentifier"
     
-    override func loadItems(isPagging: Bool) {
+    override func loadItems(isPagging: Bool, title: String? = nil) {
+               
+        var api: Network?
         
-        guard let tag = RecordTag.generateNextTag() else { return }
-        RecordTag.usedTags.append(tag)
-        // fancy way not receiving duplicates & ending data
-        
-        guard let api = Network.api(type: .recordDetails(tag: tag.rawValue)) else { return }
+        if let title = title {
+            api = Network.api(type: .artistTopRecords(artist: title))
+        } else {
+            guard let tag = RecordTag.generateNextTag() else { return }
+            RecordTag.usedTags.append(tag)
+            // fancy way not receiving duplicates & ending data
+            api = Network.api(type: .recordDetails(tag: tag.rawValue))
+        }
                 
         isLoading.accept(true)
+        
+        guard let api = api else {
+            return
+        }
         
         request = api.fetch(completion: {[weak self] result in
             guard let uSelf = self else { return }
@@ -48,7 +57,6 @@ class RecordsDataLoader: BaseDataLoader<Record> {
                 uSelf.errorOccured?(true)
             }
         })
-        
     }
     
     override func setupCollectionView(collectionView: UICollectionView) {
