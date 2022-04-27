@@ -11,6 +11,5 @@ pod 'RxCocoa', '6.5.0'
 pod 'ProgressHUD'
 pod 'SDWebImage'
 
-![Image from iOS (1)](https://user-images.githubusercontent.com/50051000/165599409-f1892eb7-111e-41eb-9bbc-07dc642e6cff.png)
-![Image from iOS (2)](https://user-images.githubusercontent.com/50051000/165599625-6c4c5070-4a6f-4628-bb4c-7845bbf672c7.png)
- 
+<img src="https://user-images.githubusercontent.com/50051000/165599409-f1892eb7-111e-41eb-9bbc-07dc642e6cff.png" width="100" height="100">
+<img src="https://user-images.githubusercontent.com/50051000/165599625-6c4c5070-4a6f-4628-bb4c-7845bbf672c7.png" width="100" height="100">
