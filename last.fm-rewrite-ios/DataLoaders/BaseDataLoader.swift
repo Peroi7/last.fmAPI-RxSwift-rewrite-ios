@@ -9,11 +9,9 @@ import UIKit
 import RxCocoa
 import RxSwift
 import Moya
-import ProgressHUD
-
 
 class BaseDataLoader<Item>: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-        
+    
     let disposeBag = DisposeBag()
     var request: Cancellable?
     var items = BehaviorRelay<[Item]>(value: [Item]())
@@ -27,12 +25,22 @@ class BaseDataLoader<Item>: NSObject, UICollectionViewDelegate, UICollectionView
         set {}
     }
     
+    //MARK: - Identifiers
+    
+    var headerTitle: String {
+        return ""
+    }
+    
     var baseCellIdentifier: String {
         return "BaseCellIdentifier"
     }
     
     var loadingCellIdentifier: String {
         return "LoadingCellIdentifier"
+    }
+    
+    var emptyStateHeaderIdentifier: String {
+        return "EmptyStateHeaderIdentifier"
     }
     
     required override init() {
@@ -43,9 +51,8 @@ class BaseDataLoader<Item>: NSObject, UICollectionViewDelegate, UICollectionView
                 self?.collectionView?.reloadData()
             }
         }).disposed(by: disposeBag)
-        
     }
-
+    
     //MARK: - UICollectionView Setup
     
     func setupCollectionView(collectionView: UICollectionView) {
@@ -54,7 +61,7 @@ class BaseDataLoader<Item>: NSObject, UICollectionViewDelegate, UICollectionView
         collectionView.collectionViewLayout = layout
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(UICollectionViewCell.nib, forCellWithReuseIdentifier: baseCellIdentifier)
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: baseCellIdentifier)
     }
     
     //MARK: - UICollectionViewDataSource
@@ -72,7 +79,7 @@ class BaseDataLoader<Item>: NSObject, UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
+        
         let cellID = cellIdentifier(indexPath: indexPath)
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
         configCell(cell: cell, indexPath: indexPath)
@@ -124,14 +131,19 @@ class BaseDataLoader<Item>: NSObject, UICollectionViewDelegate, UICollectionView
     
     //MARK: - Items Loading
     
-    func loadItems(isPagging: Bool) {
-       
+    func loadItems(isPagging: Bool, title: String? = nil) {
+        
     }
     
     func onPagination(indexPath: IndexPath) {
-       
+        
     }
-
+    
+    func loadDetails<L>(item: L) {
+        
+    }
+    
+    
 }
 
 

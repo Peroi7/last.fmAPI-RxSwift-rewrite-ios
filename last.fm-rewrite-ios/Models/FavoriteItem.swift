@@ -7,6 +7,8 @@
 
 import Foundation
 
+//MARK: - FavoriteItem
+
 struct FavoriteItem: Codable {
     
     let record: Record

@@ -12,7 +12,6 @@ import RxSwift
 
 class BaseViewController<T: Codable, DataLoader: BaseDataLoader<T>>: UIViewController {
 
-    fileprivate var visualEffectView: UIVisualEffectView!
     let collectionView = UICollectionView.init(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     let dataLoader = DataLoader()
     
@@ -20,7 +19,7 @@ class BaseViewController<T: Codable, DataLoader: BaseDataLoader<T>>: UIViewContr
         super.viewDidLoad()
         
         setupUI()
-        setupNavigationBarAppearance(background: ColorTheme.primaryBackground)
+        setupNavigationBarAppearance()
         showToast()
     }
     
@@ -63,11 +62,11 @@ class BaseViewController<T: Codable, DataLoader: BaseDataLoader<T>>: UIViewContr
     
     //MARK: - NavigationBar Appearance
     
-    func setupNavigationBarAppearance(background: UIColor) {
+    func setupNavigationBarAppearance() {
         if #available(iOS 15, *) {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
-            appearance.backgroundColor = background
+            appearance.backgroundColor = ColorTheme.primaryBackground
             appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
             appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
             navigationController?.navigationBar.prefersLargeTitles = true
@@ -81,25 +80,11 @@ extension BaseViewController {
     
     //MARK: - Error Handling Views
     
-    fileprivate func showNoDataView() {
-        let alert = UIAlertController(title: "", message: "Something went wrong. Unable to load data.", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "Try again", style: .default) { _ in
-            self.blurEffect(show: false)
-            self.dataLoader.loadItems(isPagging: false)
-        }
-        alert.addAction(defaultAction)
-        blurEffect(show: true)
-        present(alert, animated: true, completion: nil)
-    }
-    
-    fileprivate func blurEffect(show: Bool) {
-        if show {
-            let blurEffect = UIBlurEffect(style: .light)
-            visualEffectView =  UIVisualEffectView(effect: blurEffect)
-            view.addSubview(visualEffectView)
-            visualEffectView.autoPinEdgesToSuperviewEdges()
-        } else {
-            visualEffectView.removeFromSuperview()
+    func showNoDataView() {
+        let noDataView = EmptyDataView(viewController: self, message: "Something went wrong. Unable to load data.", actionTitle: "Try again")
+        noDataView.fire()
+        noDataView.onActionCompletion = { [weak self] in
+            self?.dataLoader.loadItems(isPagging: false)
         }
     }
     

@@ -20,4 +20,10 @@ public extension BehaviorRelay where Element: RangeReplaceableCollection {
         newValue.insert(contentsOf: newSubelements, at: index)
         accept(newValue)
     }
+    
+    func removeAll() {
+        var array = value
+        array.removeAll()
+        accept(array)
+    }
 }

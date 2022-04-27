@@ -10,7 +10,7 @@ import UIKit
 class CustomLabel: UILabel {
     
     //MARK: - CustomLabel
-    
+
     override func drawText(in rect: CGRect) {
         super.drawText(in: .init(
             origin: .zero,

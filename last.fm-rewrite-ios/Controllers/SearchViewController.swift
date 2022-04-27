@@ -6,17 +6,33 @@
 //
 
 import UIKit
+import ProgressHUD
 
-class SearchViewController: BaseViewController<Record, RecordsDataLoader> {
+class SearchViewController: BaseViewController<Artist, SearchDataLoader> {
+    
+    fileprivate let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.prefersLargeTitles = false
+        dataLoader.configSearchController(searchController: searchController)
+        navigationItem.searchController = searchController
+        
+        dataLoader.didSelect = {[weak self] _,_,item in
+            guard let uSelf = self else { return }
+            let recordDetailsViewController = ArtistDetailsViewController(item: item, type: .artistDetails)
+            uSelf.searchController.searchBar.resignFirstResponder()
+            uSelf.navigationController?.pushViewController(recordDetailsViewController, animated: true)
+        }
     }
+}
+
+extension SearchViewController {
     
-    override func setupNavigationBarAppearance(background: UIColor) {
-        super.setupNavigationBarAppearance(background: .white)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationItem.title = "Search for artists"
+        
     }
-    
 }
