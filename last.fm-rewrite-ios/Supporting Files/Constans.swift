@@ -13,7 +13,6 @@ struct Constants {
     static let paddingDefault: CGFloat = 24.0
     static let paddingDefaultSmall: CGFloat = 16.0
     
-    
     //MARK: - Record Details
     static let stackViewItemSize: CGFloat = 20.0
     static let scrollViewBottomInset: CGFloat = 80.0

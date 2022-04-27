@@ -58,5 +58,4 @@ extension MainTabBarController {
         case search = "icSearch-icon"
         case favorites = "icAddToFavorite-icon"
     }
-    
 }

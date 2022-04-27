@@ -11,7 +11,7 @@ import RxSwift
 class FavoritesViewController: BaseViewController<FavoriteItem, FavoritesDataLoader> {
     
     fileprivate let disposeBag = DisposeBag()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,7 +20,7 @@ class FavoritesViewController: BaseViewController<FavoriteItem, FavoritesDataLoa
         
         dataLoader.didSelect = {[weak self] _,_, item in
             guard let uSelf = self else { return }
-            let recordDetailsViewController = RecordDetailsViewController(item: item.record, loaderType: .fromDisk)
+            let recordDetailsViewController = RecordDetailsViewController(item: item.record, type: .favorites)
             uSelf.navigationController?.pushViewController(recordDetailsViewController, animated: true)
         }
     }
@@ -33,16 +33,20 @@ class FavoritesViewController: BaseViewController<FavoriteItem, FavoritesDataLoa
 extension FavoritesViewController {
     
     //MARK: - Delete Favorite Item
-
+    
     func onFavoriteItemRemoved() {
         dataLoader.onDelete.subscribe(onNext: {[weak self] (ident, index) in
             guard let uSelf = self else { return }
+            var deletionIndex = index
             guard let favoriteItem = FavoritesDataLoader.favorites.first(where: {$0.record.ident == ident}) else { return }
             uSelf.showAlertAttributed(attributedText: uSelf.generateAlertAttributed(title: favoriteItem.record.name)) { shouldRemove in
                 guard !shouldRemove else {
+                    if deletionIndex >= FavoritesDataLoader.favorites.count {
+                        deletionIndex = FavoritesDataLoader.favorites.count - 1
+                    }
                     FavoritesDataLoader.favorites.removeAll(where: {$0 == favoriteItem})
                     uSelf.collectionView.performBatchUpdates {
-                        uSelf.collectionView.deleteItems(at: [.init(item: index, section: 0)])
+                        uSelf.collectionView.deleteItems(at: [.init(item: deletionIndex, section: 0)])
                     }
                     return
                 }

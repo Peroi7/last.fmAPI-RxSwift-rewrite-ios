@@ -37,13 +37,13 @@ class RecordInfoLabel: UIView {
         
         addSubview(recordInfoLeftLabel)
         recordInfoLeftLabel.autoPinEdge(.left, to: .left, of: self, withOffset: 8.0)
-        recordInfoLeftLabel.autoSetDimension(.height, toSize: 24.0)
+        recordInfoLeftLabel.autoSetDimension(.height, toSize: Constants.paddingDefault)
         recordInfoLeftLabel.autoAlignAxis(.horizontal, toSameAxisOf: self)
         recordInfoLeftLabel.text = title.rawValue
 
         addSubview(recordInfoSecondLabel)
         recordInfoSecondLabel.autoPinEdge(.right, to: .right, of: self, withOffset: -8.0)
-        recordInfoSecondLabel.autoSetDimension(.height, toSize: 24.0)
+        recordInfoSecondLabel.autoSetDimension(.height, toSize: Constants.paddingDefault)
         recordInfoSecondLabel.autoAlignAxis(.horizontal, toSameAxisOf: recordInfoLeftLabel)
     }
     

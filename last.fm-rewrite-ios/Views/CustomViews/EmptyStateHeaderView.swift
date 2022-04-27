@@ -18,7 +18,7 @@ class EmptyStateHeaderView: UICollectionReusableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-                
+        
         addSubview(messageLabel)
         messageLabel.autoCenterInSuperview()
         
@@ -27,7 +27,7 @@ class EmptyStateHeaderView: UICollectionReusableView {
     func setupTitle(title: String) {
         messageLabel.text = title
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

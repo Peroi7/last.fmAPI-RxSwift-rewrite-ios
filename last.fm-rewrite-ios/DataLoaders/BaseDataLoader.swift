@@ -9,11 +9,9 @@ import UIKit
 import RxCocoa
 import RxSwift
 import Moya
-import ProgressHUD
-
 
 class BaseDataLoader<Item>: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-        
+    
     let disposeBag = DisposeBag()
     var request: Cancellable?
     var items = BehaviorRelay<[Item]>(value: [Item]())
@@ -26,6 +24,8 @@ class BaseDataLoader<Item>: NSObject, UICollectionViewDelegate, UICollectionView
         get { return [] }
         set {}
     }
+    
+    //MARK: - Identifiers
     
     var headerTitle: String {
         return ""
@@ -40,7 +40,7 @@ class BaseDataLoader<Item>: NSObject, UICollectionViewDelegate, UICollectionView
     }
     
     var emptyStateHeaderIdentifier: String {
-       return "EmptyStateHeaderIdentifier"
+        return "EmptyStateHeaderIdentifier"
     }
     
     required override init() {
@@ -52,7 +52,7 @@ class BaseDataLoader<Item>: NSObject, UICollectionViewDelegate, UICollectionView
             }
         }).disposed(by: disposeBag)
     }
-
+    
     //MARK: - UICollectionView Setup
     
     func setupCollectionView(collectionView: UICollectionView) {
@@ -79,7 +79,7 @@ class BaseDataLoader<Item>: NSObject, UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
+        
         let cellID = cellIdentifier(indexPath: indexPath)
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
         configCell(cell: cell, indexPath: indexPath)
@@ -131,14 +131,19 @@ class BaseDataLoader<Item>: NSObject, UICollectionViewDelegate, UICollectionView
     
     //MARK: - Items Loading
     
-    func loadItems(isPagging: Bool) {
-       
+    func loadItems(isPagging: Bool, title: String? = nil) {
+        
     }
     
     func onPagination(indexPath: IndexPath) {
-       
+        
     }
-
+    
+    func loadDetails<L>(item: L) {
+        
+    }
+    
+    
 }
 
 

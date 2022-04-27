@@ -8,7 +8,7 @@
 import UIKit
 
 class RecordTracksView: UIView {
-
+    
     @IBOutlet weak var recordTrackLabel: UILabel!
     @IBOutlet weak var expandIcon: UIImageView!
     @IBOutlet weak var stackView: UIStackView!
@@ -19,5 +19,5 @@ class RecordTracksView: UIView {
         
         backgroundColor = ColorTheme.recordDetailBackground
     }
-
+    
 }

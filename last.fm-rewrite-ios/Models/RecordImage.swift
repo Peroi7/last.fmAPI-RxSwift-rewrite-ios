@@ -10,10 +10,10 @@ import Foundation
 //MARK: - RecordsImage
 
 enum ImageSizeUrl: String {
-     case small
-     case medium
-     case large
- }
+    case small
+    case medium
+    case large
+}
 
 struct RecordImage: Codable {
     
