@@ -10,8 +10,8 @@ import RxCocoa
 
 class ArtistDetailsDataLoader: BaseDataLoader<Artist> {
     
-    var requestCompleted:(( ) -> Void)?
-    
+    var topTracks = BehaviorRelay<[Track]>(value: [Track]())
+
     override func loadItems(isPagging: Bool, title: String? = nil) {
         
         if let title = title {
@@ -25,15 +25,8 @@ class ArtistDetailsDataLoader: BaseDataLoader<Artist> {
                     do {
                         let records = try value.mapArtistTopRecords()
                         let topAlbums = records.topAlbums.topRecords
-                        if var artist = uSelf.items.value.first {
-                            topAlbums.forEach {
-                                artist.topTracks.append(Track.init(name: $0.name))
-                            }
-                            uSelf.items.removeAll()
-                            uSelf.items.accept([artist])
-                            uSelf.requestCompleted?()
-                        }
-                        
+                        let topTracks = topAlbums.map({Track(name: $0.name)})
+                        uSelf.topTracks.accept(topTracks)
                     } catch let error {
                         print("Failed to fetch top records: \(error.localizedDescription)")
                         uSelf.errorOccured?(true)

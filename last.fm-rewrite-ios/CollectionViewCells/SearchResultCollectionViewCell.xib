@@ -23,7 +23,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gG0-c8-e21" userLabel="WrapperView">
                                 <rect key="frame" x="0.0" y="0.0" width="298" height="148"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lastfm" translatesAutoresizingMaskIntoConstraints="NO" id="Jwa-8V-moJ">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lastfm" translatesAutoresizingMaskIntoConstraints="NO" id="Jwa-8V-moJ">
                                         <rect key="frame" x="16" y="50" width="48" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="Rzd-kv-eey"/>
@@ -87,7 +87,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="lastfm" width="100" height="75"/>
+        <image name="lastfm" width="321" height="157"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

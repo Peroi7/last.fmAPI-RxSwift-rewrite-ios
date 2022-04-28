@@ -15,25 +15,23 @@ class ArtistDetailsViewController: BaseRecordDetailsViewController<Artist, Artis
         super.viewDidLoad()
         
         onErrorOccured()
-        dataLoader.requestCompleted =  {[weak self] in
+        dataLoader.topTracks.subscribe(onNext: {[weak self] (tracks) in
             guard let uSelf = self else { return }
-            guard let uItem = uSelf.dataLoader.items.value.first else { return }
-            uSelf.configureTopTracks(item: uItem)
-        }
+            uSelf.configureTopTracks(topTracks: tracks)
+        }).disposed(by: disposeBag)
     }
     
     override func expand() {
         super.reverseExpanded()
-        setExpanded(isExpanded: isExpanded, animated: true, items: dataLoader.items.value.first?.topTracks)
+        setExpanded(isExpanded: isExpanded, animated: true, items: dataLoader.topTracks.value)
     }
     
     //MARK: - Top Tracks
     
-    func configureTopTracks(item: Artist) {
-        guard !item.topTracks.isEmpty else { return }
+    func configureTopTracks(topTracks: [Track]) {
         DispatchQueue.main.async {
             self.topTracksView.alpha = 1
-            self.topTracksView.recordTrackLabel.text = item.topTracks.first?.name
+            self.topTracksView.recordTrackLabel.text = topTracks.first?.name
         }
     }
     
@@ -50,7 +48,8 @@ class ArtistDetailsViewController: BaseRecordDetailsViewController<Artist, Artis
             
             if let description = item.artistBio.summary {
                 let descriptionText = description.cleanString()
-                guard !descriptionText.isBlankOrEmpty() else { descriptionView.removeFromSuperview()
+                guard !descriptionText.isBlankOrEmpty() else { descriptionView.isHidden = true
+                    setDefaultConstraints()
                     return
                 }
                 descriptionView.descriptionLabel.text = descriptionText
@@ -59,13 +58,7 @@ class ArtistDetailsViewController: BaseRecordDetailsViewController<Artist, Artis
             if let itemTags = item.tags.itemTags {
                 recordArtistLabel.text = "Tags - \(itemTags.allJoined())"
             }
-            
-            guard !item.topTracks.isEmpty else { return }
-            topTracksView.recordTrackLabel.text = item.topTracks.first?.name
-            topTracksView.alpha = 1
-            
             //JSON is so messed up
-            
         }
     }
 }

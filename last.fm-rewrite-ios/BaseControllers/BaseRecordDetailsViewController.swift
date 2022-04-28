@@ -156,7 +156,7 @@ class BaseRecordDetailsViewController<T: Codable, DataLoader: BaseDataLoader<T>>
         topTracksView = RecordTracksView.fromNib()
         containerView.addSubview(topTracksView)
         topTracksView.alpha = 0
-        topTracksView.autoPinEdge(.top, to: .bottom, of: loaderType == .artistDetails ? descriptionView : recordInfoView.wrapperView, withOffset: 54.0)
+        topTracksView.autoPinEdge(.top, to: .bottom, of: loaderType == .artistDetails ? descriptionView :  recordInfoView.wrapperView, withOffset: 54.0)
         topTracksView.autoPinEdge(.left, to: .left, of: containerView)
         topTracksView.autoPinEdge(.right, to: .right, of: containerView)
         topTracksView.autoSetDimension(.height, toSize: 120.0)
@@ -201,6 +201,10 @@ class BaseRecordDetailsViewController<T: Codable, DataLoader: BaseDataLoader<T>>
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setFavoriteButtonImage(animated: false)
+    }
+    
+    func setDefaultConstraints() {
+        topTracksView.autoPinEdge(.top, to: .bottom, of:  recordInfoView.wrapperView, withOffset: 54.0)
     }
     
     //MARK: - FavoriteButton Setup
